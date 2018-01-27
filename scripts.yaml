@@ -1,0 +1,35 @@
+spotify_music:
+  #alias: Play selected spotify playlist
+  sequence:
+    - service: media_player.volume_set
+      data:
+        entity_id: media_player.spotify
+        volume_level: '0.40'
+    - service: media_player.select_source
+      data_template:
+        entity_id: media_player.spotify
+        source: >
+         {% if is_state("input_select.spotify_source", "Everywhere") %} Everywhere
+         {% elif is_state("input_select.spotify_source", "Kitchen Speaker") %} 'Kitchen Speaker'
+         {% elif is_state("input_select.spotify_source", "iPhone") %} iPhone
+         {% elif is_state("input_select.spotify_source", "Living Room Speaker") %} 'Living Room Speaker'
+         {% endif %}
+    - service: media_player.play_media
+      data_template:
+        entity_id: media_player.spotify
+        media_content_type: playlist
+        media_content_id: >
+         {% if is_state("input_select.spotify_playlist", "Coffee + Chill") %} spotify:user:spotify:playlist:37i9dQZF1DXa1BeMIGX5Du
+         {% elif is_state("input_select.spotify_playlist", "Brekkie Time") %} spotify:user:spotify:playlist:37i9dQZF1DWXJGulibxRbg
+         {% elif is_state("input_select.spotify_playlist", "Lazy Sunday") %} spotify:user:12131571557:playlist:37i9dQZF1DWTc452KG008d
+         {% elif is_state("input_select.spotify_playlist", "Relax & Unwind") %} spotify:user:spotify:playlist:37i9dQZF1DWU0ScTcjJBdj 
+         {% elif is_state("input_select.spotify_playlist", "Your Favorite Coffeehouse") %} spotify:user:spotify:playlist:37i9dQZF1DX6ziVCJnEm59
+         {% endif %}
+    - service: notify.notify
+      data:
+        message: Playing some spotify music
+
+    # - service: media_player.shuffle_set
+    #   data:
+    #     entity_id: media_player.spotify
+    #     shuffle: 'true'

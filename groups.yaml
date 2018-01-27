@@ -1,0 +1,151 @@
+default_view:
+  view: yes
+  icon: mdi:home 
+  entities:
+    - group.Speakers
+    - group.Family
+    - group.Miscelanious
+    - group.SceneTriggers
+    - group.MusicSpotify
+LivingRoom:
+  name: Living Room
+  view: yes
+  icon: mdi:television
+  entities:
+    - group.LivingRoomFan
+    - media_player.onkyo_amplifier
+    - media_player.living_room_speaker
+    - group.LivingRoomSensors
+LivingRoomFan:
+  name: Living Room Fan
+  control: hidden
+  entities:
+    - input_boolean.fan_light
+    - fan.ceiling_fan
+LivingRoomSensors:
+  name: Living Room Sensors
+  entities:
+    - sensor.living_room_temp_sensor_8
+    - sensor.living_room_light_sensor_9
+    - binary_sensor.living_room_sliding_door_sensor_11
+    - binary_sensor.living_room_motion_sensor_7
+    - sensor.living_room_humidity_sensor_10
+Kitchen:
+  name: Kitchen
+  view: yes
+  icon: mdi:fridge
+  entities:
+    - group.EntranceHallAndKitchen
+    - group.FrontDoorSensors
+    - group.FoyerSensors
+    - media_player.kitchen_speaker
+    - camera.front_door_cam
+FoyerSensors:
+  name: Foyer Sensors
+  entities:
+    - sensor.foyer_temp_sensor_15
+    - sensor.foyer_light_sensor_16
+    - binary_sensor.foyer_motion_sensor_14
+    - sensor.foyer_humidity_sensor_17
+FrontDoorSensors:
+  name: Front Door / Outside Sensors
+  entities:
+    - binary_sensor.front_door_sensor_6
+    - sensor.outside_temp_sensor_19
+    - sensor.outside_light_sensor_20
+    - binary_sensor.outside_motion_sensor_18
+    - sensor.outside_humidity_sensor_21
+EntranceHallAndKitchen:
+  name: Switches
+  control: hidden
+  icon: mdi:dip-switch
+  entities:
+    - switch.lucy_switch
+    - light.charlie_dimmable_13
+RubysRoom:
+  name: Rubys Room
+  view: yes
+  icon: mdi:heart
+  entities:
+    - camera.ruby_cam
+    - group.RubySwitches
+RubySwitches:
+  name: Switches
+  entities:
+    - input_boolean.plug_1
+MainBedRoom:
+  name: Main Bedroom
+  view: yes
+  icon: mdi:hotel
+  entities:
+    - switch.woodstock_switch
+
+# Plugs:
+#   name: Plugs
+#   entities:
+#     - input_boolean.plug_2
+#     - input_boolean.plug_3
+
+iDevices:
+  name: iDevices
+  entities:
+    - sensor.iphone_battery_level
+    - sensor.kellys_ipad_battery_level
+InternetSpeedGroup:
+  name: Internet Speed
+  entities:
+    - sensor.speedtest_download
+    - sensor.speedtest_ping
+    - sensor.speedtest_upload
+Speakers:
+  name: Speakers
+  entities:
+    - media_player.everywhere
+    - media_player.spotify
+Family: 
+  entities:
+    - device_tracker.ettiennes_iphone
+    - device_tracker.kkramers_iphone    
+
+Miscelanious: 
+  view: yes
+  icon: mdi:comment-question-outline
+  entities:
+    - group.VariousSensors
+    - group.InternetSpeedGroup
+    - group.iDevices
+    - group.Climate
+
+VariousSensors:
+  name: Various Sensors
+  entities:
+    - sensor.cpu_speed
+    - sensor.ssl_certificate_expiry
+Climate: 
+  entities:
+    - sensor.bom_weather_air_temp_c
+    - sensor.bom_weather_rain_today
+    - sensor.bom_weather_relative_humidity
+    #- sensor.bh1750_light_sensor
+    #- sensor.pi_temp_temperature
+    #- sensor.pi_temp_humidity
+
+SceneTriggers: 
+  name: Scene Triggers
+  icon: mdi:directions-fork
+  control: hidden
+  entities: 
+    - input_boolean.ruby_bathtime
+    - input_boolean.ruby_bedtime
+    - input_boolean.bedtime_scene
+    - input_boolean.morning_scene
+    - input_boolean.doorbell
+    - input_number.announcements_volume
+
+MusicSpotify:
+  name: Music 
+  entities:
+  - input_select.spotify_playlist
+  - input_select.spotify_source
+  - script.spotify_music
+  - input_number.spotify_volume

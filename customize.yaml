@@ -1,0 +1,44 @@
+input_boolean.fan_light:
+  homebridge_switch_type: outlet
+  homebridge_name: Fan Light
+  homebridge_visible: true
+input_boolean.plug_1:
+  homebridge_switch_type: outlet
+  homebridge_visible: true
+  homebridge_name: Fan
+  friendly_name: Ruby's Fan
+switch.woodstock_switch:
+  homebridge_switch_type: outlet
+  homebridge_visible: true
+  homebridge_name: Discreet Light
+  friendly_name: Discreet Light
+  icon: mdi:priority-low
+fan.ceiling_fan:
+  homebridge_visible: true
+  homebridge_name: Fan
+device_tracker.ettiennes_iphone:
+  friendly_name: Ettienne
+device_tracker.kkramers_iphone:
+  friendly_name: Kelly
+switch.lucy_switch:
+  friendly_name: Coffee Machine
+  icon: mdi:coffee
+script.spotify_music:
+  friendly_name: 'Play'
+  icon: mdi:play
+light.charlie_dimmable_13:
+  friendly_name: 'Standing Light'
+  icon: mdi:ceiling-light
+sensor.living_room_temp_sensor_8:
+  friendly_name: 'Temperature'
+sensor.living_room_light_sensor_9:
+  friendly_name: 'Light'
+binary_sensor.living_room_sliding_door_sensor_11:
+  friendly_name: 'Door Open'
+  icon: mdi:lock-open
+binary_sensor.living_room_motion_sensor_7:
+  friendly_name: 'Motion'
+  icon: mdi:cursor-move
+sensor.living_room_humidity_sensor_10:
+  friendly_name: 'Humidity'
+  icon: mdi:water-percent
