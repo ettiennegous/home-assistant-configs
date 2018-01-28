@@ -40,7 +40,7 @@ updater:
   # include_used_components: true
 
 # Discover some devices automatically
-#discovery:
+discovery:
 
 # Allows you to issue voice commands from the frontend in enabled browsers
 conversation:
@@ -104,6 +104,14 @@ tts:
 cloud:
 
 ios:
+
+notify:
+  - name: All_iOS_Devices
+    platform: group
+    services:
+      - service: ios_ettiennes_iphone
+      - service: ios_kellys_ipad
+      - service: ios_kkramers_iphone
 
 mqtt:
   broker: !secret mqtt_broker

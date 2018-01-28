@@ -339,6 +339,15 @@
         entity_id: media_player.everywhere
         media_content_id: !secret doorbell_mp3_url
         media_content_type: audio/mp3
+    - service: notify.All_iOS_Devices
+      data:
+        message: Ding Dong Front Door
+        data:
+          attachment:
+            content-type: jpeg
+          push:
+            category: camera
+          entity_id: camera.front_door_cam
 - alias: 'Set Everywhere Volume'
   trigger:
       platform: state
