@@ -33,3 +33,28 @@ spotify_music:
     #   data:
     #     entity_id: media_player.spotify
     #     shuffle: 'true'
+
+light_flash:
+  alias: Light flash on
+  sequence:
+    - service: light.turn_on
+      data: 
+        entity_id: light.charlie_dimmable_13
+        brightness: 40 # 0 to 255
+    - delay:
+        seconds: 1
+    - service: light.turn_off
+      data:
+        entity_id: light.charlie_dimmable_13
+    - service: script.turn_on
+      data:
+        entity_id: script.light_loop
+light_loop:
+  alias: Light flash loop
+  sequence:
+    - delay:
+        # time for flash light off
+        seconds: 1
+    - service: script.turn_on
+      data:
+        entity_id: script.light_flash

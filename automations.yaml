@@ -341,7 +341,7 @@
         media_content_type: audio/mp3
     - service: notify.All_iOS_Devices
       data:
-        message: Ding Dong Front Door
+        message: 'Ding Dong Front Door {{now().strftime("%Y%m%d-%H%M%S")}}'
         data:
           attachment:
             content-type: jpeg
@@ -357,3 +357,48 @@
       data_template:
         entity_id: media_player.everywhere
         volume_level: '{{  states.input_number.announcements_volume.state  }}'
+
+- alias: 'Trigger alarm while armed away'
+  trigger:
+    - platform: state
+      entity_id: group.AlarmSensors
+      from: 'off'
+      to: 'on'
+  condition:
+    - condition: state
+      entity_id: alarm_control_panel.home_alarm
+      state: armed_away
+  action:
+    service: alarm_control_panel.alarm_trigger
+    entity_id: alarm_control_panel.home_alarm
+- alias: 'Alarm Away when Leave home'
+  trigger:
+    platform: state
+    entity_id: group.PhoneTrackers
+    to: 'not_home'
+  action:
+    service: alarm_control_panel.alarm_arm_away
+    entity_id: alarm_control_panel.alarm
+- alias: 'Send notification when alarm triggered'
+  trigger:
+    - platform: state
+      entity_id: alarm_control_panel.home_alarm
+      to: 'triggered'
+  action:
+    - service: notify.notify
+      data:
+        message: 'ALARM! The alarm has been triggered {{now().strftime("%Y%m%d-%H%M%S")}}'
+    - service: script.turn_on
+      entity_id: script.light_flash
+- alias: 'Disarmed Off'
+  hide_entity: True
+  trigger:
+    - platform: state
+      entity_id: alarm_control_panel.home_alarm
+      to: 'disarmed'
+  action:
+    - service: script.turn_off
+      entity_id: script.light_loop
+    - service: notify.notify
+      data:
+        message: 'Home Alarm Reset {{now().strftime("%Y%m%d-%H%M%S")}}'

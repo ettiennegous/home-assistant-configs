@@ -73,6 +73,7 @@ RubySwitches:
   name: Switches
   entities:
     - input_boolean.plug_1
+    - sensor.ruby_room_temp
 MainBedRoom:
   name: Main Bedroom
   view: yes
@@ -107,6 +108,11 @@ Family:
     - device_tracker.ettiennes_iphone
     - device_tracker.kkramers_iphone    
 
+PhoneTrackers: 
+  entities:
+    - device_tracker.ettiennes_iphone
+    - device_tracker.kkramers_iphone    
+
 Miscelanious: 
   view: yes
   icon: mdi:comment-question-outline
@@ -135,6 +141,7 @@ SceneTriggers:
   icon: mdi:directions-fork
   control: hidden
   entities: 
+    - alarm_control_panel.home_alarm
     - input_boolean.ruby_bathtime
     - input_boolean.ruby_bedtime
     - input_boolean.bedtime_scene
@@ -149,3 +156,10 @@ MusicSpotify:
   - input_select.spotify_source
   - script.spotify_music
   - input_number.spotify_volume
+
+AlarmSensors:
+  entities:
+  - binary_sensor.front_door_sensor_6
+  - binary_sensor.foyer_motion_sensor_14
+  - binary_sensor.living_room_motion_sensor_7
+  - binary_sensor.living_room_sliding_door_sensor_11

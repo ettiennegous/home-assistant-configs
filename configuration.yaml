@@ -59,6 +59,11 @@ sun:
 
 # Weather prediction
 sensor:
+  - platform: dcs855l
+    host: !secret ruby_cam_host
+    name: Ruby Room Temp
+    username: !secret camera_username
+    password: !secret camera_password
   - platform: cpuspeed
   - platform: yr
   - platform: time_date
@@ -337,3 +342,28 @@ input_select:
     initial: Everywhere
     icon: mdi:speaker-wireless
 #End Custom Spotify Player
+google_assistant:
+  project_id: !secret google_assistant_project_id
+  client_id: !secret google_assistant_client_id
+  access_token: !secret google_assistant_access_token
+  agent_user_id: !secret google_assistant_agent_user_id
+  api_key: !secret google_assistant_api_key
+  exposed_domains:
+    - switch
+    - light
+    - group
+    - input_boolean
+  entity_config:
+    switch.lucy_switch:
+      name: Coffee Machine
+      aliases:
+        - coffee machine
+        - coffee
+      type: light
+
+alarm_control_panel:
+  - platform: manual
+    name: Home Alarm
+    pending_time: 10
+    trigger_time: 10
+    disarm_after_trigger: false
