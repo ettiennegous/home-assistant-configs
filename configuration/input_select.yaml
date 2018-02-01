@@ -1,0 +1,19 @@
+spotify_playlist:
+  name: 'Playlist:'
+  options:
+    - Coffee + Chill
+    - Brekkie Time
+    - Lazy Sunday
+    - Relax & Unwind
+    - Your Favorite Coffeehouse
+  initial: Your Favorite Coffeehouse
+  icon: mdi:spotify
+spotify_source:
+  name: 'Source:'
+  options:
+    - Everywhere
+    - iPhone
+    - Kitchen Speaker
+    - Living Room Speaker
+  initial: Everywhere
+  icon: mdi:speaker-wireless

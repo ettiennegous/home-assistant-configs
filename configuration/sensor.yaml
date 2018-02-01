@@ -1,0 +1,42 @@
+- platform: dcs855l
+  host: !secret ruby_cam_host
+  name: Ruby Room Temp
+  username: !secret camera_username
+  password: !secret camera_password
+- platform: cpuspeed
+- platform: yr
+- platform: time_date
+  display_options:
+    - 'date_time'
+- platform: bom
+  station: !secret bom_station
+  name: Weather 
+  monitored_conditions:
+    - air_temp
+    - rain_trace
+    - rel_hum
+    - weather
+    - wind_dir
+    - wind_spd_kmh
+# - platform: dht
+#   name: PI Temp
+#   sensor: DHT11
+#   pin: 3
+#   monitored_conditions:
+#     - temperature
+#     - humidity
+# - platform: bh1750
+#   i2c_address: 0x23
+- platform: speedtest
+  monitored_conditions:
+    - ping
+    - download
+    - upload
+  hour:
+    - 0
+    - 6
+    - 12
+    - 18
+    - 22
+- platform: cert_expiry
+  host: !secret cert_expiry_host

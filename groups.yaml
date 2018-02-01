@@ -7,6 +7,7 @@ default_view:
     - group.Miscelanious
     - group.SceneTriggers
     - group.MusicSpotify
+
 LivingRoom:
   name: Living Room
   view: yes
@@ -16,12 +17,14 @@ LivingRoom:
     - media_player.onkyo_amplifier
     - media_player.living_room_speaker
     - group.LivingRoomSensors
+
 LivingRoomFan:
   name: Living Room Fan
   control: hidden
   entities:
     - input_boolean.fan_light
     - fan.ceiling_fan
+
 LivingRoomSensors:
   name: Living Room Sensors
   entities:
@@ -30,6 +33,7 @@ LivingRoomSensors:
     - binary_sensor.living_room_sliding_door_sensor_11
     - binary_sensor.living_room_motion_sensor_7
     - sensor.living_room_humidity_sensor_10
+
 Kitchen:
   name: Kitchen
   view: yes
@@ -40,6 +44,7 @@ Kitchen:
     - group.FoyerSensors
     - media_player.kitchen_speaker
     - camera.front_door_cam
+
 FoyerSensors:
   name: Foyer Sensors
   entities:
@@ -47,6 +52,7 @@ FoyerSensors:
     - sensor.foyer_light_sensor_16
     - binary_sensor.foyer_motion_sensor_14
     - sensor.foyer_humidity_sensor_17
+
 FrontDoorSensors:
   name: Front Door / Outside Sensors
   entities:
@@ -55,6 +61,7 @@ FrontDoorSensors:
     - sensor.outside_light_sensor_20
     - binary_sensor.outside_motion_sensor_18
     - sensor.outside_humidity_sensor_21
+
 EntranceHallAndKitchen:
   name: Switches
   control: hidden
@@ -62,6 +69,7 @@ EntranceHallAndKitchen:
   entities:
     - switch.lucy_switch
     - light.charlie_dimmable_13
+
 RubysRoom:
   name: Rubys Room
   view: yes
@@ -69,11 +77,13 @@ RubysRoom:
   entities:
     - camera.ruby_cam
     - group.RubySwitches
+
 RubySwitches:
   name: Switches
   entities:
     - input_boolean.plug_1
     - sensor.ruby_room_temp
+
 MainBedRoom:
   name: Main Bedroom
   view: yes
@@ -81,28 +91,25 @@ MainBedRoom:
   entities:
     - switch.woodstock_switch
 
-# Plugs:
-#   name: Plugs
-#   entities:
-#     - input_boolean.plug_2
-#     - input_boolean.plug_3
-
 iDevices:
   name: iDevices
   entities:
     - sensor.iphone_battery_level
     - sensor.kellys_ipad_battery_level
+
 InternetSpeedGroup:
   name: Internet Speed
   entities:
     - sensor.speedtest_download
     - sensor.speedtest_ping
     - sensor.speedtest_upload
+
 Speakers:
   name: Speakers
   entities:
     - media_player.everywhere
     - media_player.spotify
+
 Family: 
   entities:
     - device_tracker.ettiennes_iphone
@@ -127,14 +134,12 @@ VariousSensors:
   entities:
     - sensor.cpu_speed
     - sensor.ssl_certificate_expiry
+
 Climate: 
   entities:
     - sensor.bom_weather_air_temp_c
     - sensor.bom_weather_rain_today
     - sensor.bom_weather_relative_humidity
-    #- sensor.bh1750_light_sensor
-    #- sensor.pi_temp_temperature
-    #- sensor.pi_temp_humidity
 
 SceneTriggers: 
   name: Scene Triggers

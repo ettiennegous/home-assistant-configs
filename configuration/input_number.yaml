@@ -1,0 +1,12 @@
+spotify_volume:
+  name: Volume
+  icon: mdi:volume-high
+  min: 0
+  max: 1
+  step: 0.05
+announcements_volume:
+  name: Announcements Volume
+  icon: mdi:bullhorn
+  min: 0
+  max: 1
+  step: 0.05

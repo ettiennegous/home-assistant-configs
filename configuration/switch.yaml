@@ -1,0 +1,22 @@
+- platform: mqtt
+  name: "Woodstock Switch"
+  state_topic: "stat/sonoff-woodstock/POWER"
+  command_topic: "cmnd/sonoff-woodstock/POWER"
+  availability_topic: "tele/sonoff-woodstock/LWT"
+  payload_on: "ON"
+  payload_off: "OFF"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  qos: 1
+  retain: true
+- platform: mqtt
+  name: "Lucy Switch"
+  state_topic: "stat/sonoff-lucy/POWER"
+  command_topic: "cmnd/sonoff-lucy/POWER"
+  availability_topic: "tele/sonoff-lucy/LWT"
+  payload_on: "ON"
+  payload_off: "OFF"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  qos: 1
+  retain: true
