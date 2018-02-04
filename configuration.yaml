@@ -78,6 +78,7 @@ duckdns:
 input_boolean: !include configuration/input_boolean.yaml
 media_player: !include configuration/media_player.yaml
 switch: !include configuration/switch.yaml
+
 vera:
   vera_controller_url: !secret vera_vera_controller_url
 fan:
@@ -120,3 +121,12 @@ alarm_control_panel:
     pending_time: 10
     trigger_time: 10
     disarm_after_trigger: false
+
+weblink:
+  entities:
+    - name: Router
+      url: !secret tomato_url
+      icon: mdi:home-automation
+    - name: Front Door Camera
+      url: !secret front_door_cam_url
+      icon: mdi:cctv
