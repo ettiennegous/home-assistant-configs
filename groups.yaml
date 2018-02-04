@@ -2,20 +2,28 @@ default_view:
   view: yes
   icon: mdi:home 
   entities:
+    - group.SceneTriggers
     - group.Speakers
     - group.Family
     - group.Miscelanious
-    - group.SceneTriggers
     - group.MusicSpotify
+    - group.WebLinks
 LivingRoom:
   name: Living Room
   view: yes
   icon: mdi:television
   entities:
+    - group.LivingRoomAV
     - group.LivingRoomFan
     - media_player.onkyo_amplifier
     - media_player.living_room_speaker
     - group.LivingRoomSensors
+LivingRoomAV:
+  name: Living Room AV
+  control: hidden
+  entities:
+    - input_boolean.panasonic_tv
+    - input_boolean.onkyo_amp
 LivingRoomFan:
   name: Living Room Fan
   control: hidden
@@ -163,3 +171,9 @@ AlarmSensors:
   - binary_sensor.foyer_motion_sensor_14
   - binary_sensor.living_room_motion_sensor_7
   - binary_sensor.living_room_sliding_door_sensor_11
+
+WebLinks:
+  name: Links
+  entities:
+  - weblink.front_door_camera
+  - weblink.router

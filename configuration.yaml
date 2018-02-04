@@ -146,6 +146,12 @@ duckdns:
   access_token: !secret duckdns_access_token
 
 input_boolean:
+  onkyo_amp:
+    name: Onkyo Amplifier
+    icon: mdi:speaker-wireless
+  panasonic_tv:
+    name: Panasonic TV
+    icon: mdi:television-classic
   doorbell:
     name: Doorbell
     icon: mdi:alarm-bell
@@ -283,6 +289,8 @@ shell_command:
   plug_1_off: pilight-send -p raw -c "230 736 253 736 253 736 736 253 253 736 736 253 253 736 253 736 736 276 713 276 253 736 253 736 736 253 736 253 736 253 713 253 713 276 253 759 230 759 230 736 253 736 736 253 736 253 713 253 736 276 713 276 253 759 253 736 230 736 253 736 253 736 253 736 230 8096"
   plug_2_on: pilight-send -p raw -c "207 736 253 736 253 736 736 253 253 736 736 253 253 736 253 736 736 253 713 253 253 713 253 759 713 276 713 276 713 276 713 276 736 253 253 736 253 736 253 736 713 276 230 736 736 253 736 276 713 276 713 276 230 759 253 759 736 253 230 736 253 736 253 736 230 8119"
   plug_2_off: pilight-send -p raw -c "230 736 253 736 253 736 736 253 230 759 713 253 253 759 253 759 713 253 713 276 230 759 230 759 713 299 713 253 713 276 713 276 713 253 253 736 230 759 230 736 230 759 253 736 713 276 713 276 713 276 713 276 230 759 230 759 230 759 713 276 230 759 230 736 230 8142"
+  camera_capture_video: !secret camera_capture_command
+  panasonic_tv_power: irsend SEND_ONCE Panasonic_N2QAYB000239 KEY_POWER
   # plug_3_on: pilight-send -p raw -c "241 723 241 723 241 723 723 241 241 723 723 241 241 723 241 723 723 241 723 241 241 723 241 723 723 241 723 241 723 241 723 241 723 241 241 723 241 723 241 723 723 241 723 241 241 723 723 241 723 482 482 241 241 723 241 723 723 241 723 241 241 723 241 723 241 8194"
   # plug_3_off: pilight-send -p raw -c "240 720 240 720 240 720 720 240 240 720 720 240 240 720 240 720 720 240 720 240 240 720 240 720 720 240 720 240 720 240 720 240 720 240 240 720 240 720 240 720 240 720 720 240 240 720 720 240 720 240 720 240 240 720 240 720 240 720 240 720 720 240 240 720 240 8160"
   # plug_all_on: pilight-send -p raw -c ""
@@ -367,3 +375,12 @@ alarm_control_panel:
     pending_time: 10
     trigger_time: 10
     disarm_after_trigger: false
+
+weblink:
+  entities:
+    - name: Router
+      url: !secret tomato_url
+      icon: mdi:home-automation
+    - name: Front Door Camera
+      url: !secret front_door_cam_url
+      icon: mdi:cctv

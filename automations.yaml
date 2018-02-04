@@ -156,6 +156,24 @@
 #     to: 'off'
 #   action:
 #     service: shell_command.plugs_all_off
+#tv
+- alias: Turn TV On
+  hide_entity: True
+  trigger:
+    platform: state
+    entity_id: input_boolean.panasonic_tv
+    to: 'on'
+  action:
+    service: shell_command.panasonic_tv_power
+- alias: Turn TV Off
+  hide_entity: True
+  trigger:
+    platform: state
+    entity_id: input_boolean.panasonic_tv
+    to: 'off'
+  action:
+    service: shell_command.panasonic_tv_power
+
 #misc
 - alias: Ruby Bed Time
   hide_entity: True
@@ -330,6 +348,7 @@
         entity_id: input_boolean.doorbell
         state: 'on'
   action:
+    - service: shell_command.camera_capture_video
     - service: media_player.volume_set
       data_template:
         entity_id: media_player.everywhere
