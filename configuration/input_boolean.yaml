@@ -1,0 +1,39 @@
+doorbell:
+  name: Doorbell
+  icon: mdi:alarm-bell
+fan_light:
+  name: Light
+  icon: mdi:lightbulb-on
+plug_1:
+  name: Ruby Fan
+  icon: mdi:fan
+# plug_2:
+#   name: Plug 2 Unassigned
+#   icon: mdi:power-plug
+bedtime_scene:
+  name: Ett Bedtime 
+  icon: mdi:login
+  initial: off
+ruby_bathtime:
+  name: Ruby Bathtime
+  initial: off
+  icon: mdi:skull
+ruby_bedtime:
+  name: Ruby Bedtime
+  initial: off
+  icon: mdi:weather-night
+morning_scene:
+  name: Morning Routine
+  icon: mdi:weather-sunset-up
+# plug_3:
+#   name: Plug 3
+#   initial: off
+#   icon: mdi:remote
+# plug_4:
+#   name: Plug 4
+#   initial: off
+#   icon: mdi:remote
+# plugs_all:
+#   name: All Plug
+#   initial: off
+#   icon: mdi:remote

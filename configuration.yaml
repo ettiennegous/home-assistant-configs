@@ -12,13 +12,10 @@ homeassistant:
   time_zone: Australia/Melbourne
   # Customization file
   customize: !include customize.yaml
-
 # Enables the frontend
 frontend:
-
 # Enables configuration UI
 config:
-
 http:
   # Secrets are defined in the file secrets.yaml
   api_password: !secret api_password
@@ -38,78 +35,24 @@ http:
 updater:
   # Optional, allows Home Assistant developers to focus on popular components.
   # include_used_components: true
-
 # Discover some devices automatically
 discovery:
-
 # Allows you to issue voice commands from the frontend in enabled browsers
 conversation:
-
 # Enables support for tracking state changes over time
 history:
-
 # View all events in a logbook
 logbook:
-
 # Enables a map showing the location of tracked devices
 map:
-
 # Track the sun
 sun:
-
-# Weather prediction
-sensor:
-  - platform: dcs855l
-    host: !secret ruby_cam_host
-    name: Ruby Room Temp
-    username: !secret camera_username
-    password: !secret camera_password
-  - platform: cpuspeed
-  - platform: yr
-  - platform: time_date
-    display_options:
-      - 'date_time'
-  - platform: bom
-    station: !secret bom_station
-    name: Weather 
-    monitored_conditions:
-      - air_temp
-      - rain_trace
-      - rel_hum
-      - weather
-      - wind_dir
-      - wind_spd_kmh
-  # - platform: dht
-  #   name: PI Temp
-  #   sensor: DHT11
-  #   pin: 3
-  #   monitored_conditions:
-  #     - temperature
-  #     - humidity
-  # - platform: bh1750
-  #   i2c_address: 0x23
-  - platform: speedtest
-    monitored_conditions:
-      - ping
-      - download
-      - upload
-    hour:
-      - 0
-      - 6
-      - 12
-      - 18
-      - 22
-  - platform: cert_expiry
-    host: !secret cert_expiry_host
-# Text to speech
+sensor: !include configuration/sensor.yaml
 tts:
   - platform: google
-
 # Cloud
 cloud:
-
 ios:
-
 notify:
   - name: All_iOS_Devices
     platform: group
@@ -117,147 +60,27 @@ notify:
       - service: ios_ettiennes_iphone
       - service: ios_kellys_ipad
       - service: ios_kkramers_iphone
-
 mqtt:
   broker: !secret mqtt_broker
-
 group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml
-
-camera:
-  - platform: mjpeg
-    name: Front Door Cam
-    mjpeg_url: !secret front_door_cam_mjpeg_url
-  - platform: mjpeg
-    name: Ruby Cam
-    mjpeg_url: !secret ruby_cam_mjpeg_url
-    username: !secret camera_username
-    password: !secret camera_password
+camera: !include configuration/camera.yaml
 device_tracker:
   - platform: tomato
     host: !secret tomato_host
     username: !secret tomato_username
     password: !secret tomato_password
     http_id: !secret tomato_http_id
-
 duckdns:
   domain: !secret duckdns_domain
   access_token: !secret duckdns_access_token
+input_boolean: !include configuration/input_boolean.yaml
+media_player: !include configuration/media_player.yaml
+switch: !include configuration/switch.yaml
 
-input_boolean:
-  onkyo_amp:
-    name: Onkyo Amplifier
-    icon: mdi:speaker-wireless
-  panasonic_tv:
-    name: Panasonic TV
-    icon: mdi:television-classic
-  doorbell:
-    name: Doorbell
-    icon: mdi:alarm-bell
-  fan_light:
-    name: Light
-    icon: mdi:lightbulb-on
-  plug_1:
-    name: Ruby Fan
-    icon: mdi:fan
-  # plug_2:
-  #   name: Plug 2 Unassigned
-  #   icon: mdi:power-plug
-  bedtime_scene:
-    name: Ett Bedtime 
-    icon: mdi:login
-    initial: off
-  ruby_bathtime:
-    name: Ruby Bathtime
-    initial: off
-    icon: mdi:skull
-  ruby_bedtime:
-    name: Ruby Bedtime
-    initial: off
-    icon: mdi:weather-night
-  morning_scene:
-    name: Morning Routine
-    icon: mdi:weather-sunset-up
-  # plug_3:
-  #   name: Plug 3
-  #   initial: off
-  #   icon: mdi:remote
-  # plug_4:
-  #   name: Plug 4
-  #   initial: off
-  #   icon: mdi:remote
-  # plugs_all:
-  #   name: All Plug
-  #   initial: off
-  #   icon: mdi:remote
-
-media_player:
-  - platform: onkyo
-    host: !secret onkyo_host
-    name: Onkyo Amplifier
-  - platform: spotify
-    client_id: !secret spotify_client_id
-    client_secret: !secret spotify_client_secret
-    name: Spotify
-    aliases: 
-      !secret spotify_alias_everwhere: 'Everywhere'
-      !secret spotify_alias_study_pc: 'Study PC'
-      !secret spotify_alias_iphone: 'Ett iPhone'
-      !secret spotify_alias_kitchen_speaker: 'Kitchen Speaker'
-      !secret spotify_alias_living_room_speaker: 'Living Room Speaker'
-  - platform: cast
-    name: Living Room Speaker
-    host: !secret living_room_speaker_host
-  - platform: cast
-    name: Kitchen Speaker
-    host: !secret kitchen_speaker_host
-
-# google_assistant:
-#   project_id: someproject-2d0b8
-#   client_id: [long URL safe random string]
-#   access_token: [a different long URL safe random string]
-#   agent_user_id: [a string to identify user]
-#   api_key: [a Homegraph API Key generated for the Google Actions project]
-#   exposed_domains:
-#     - switch
-#     - light
-#     - group
-#   entity_config:
-#     switch.kitchen:
-#       name: Custom Name for Alexa
-#       aliases:
-#         - bright lights
-#         - entry lights
-#       type: light
-#     light.living_room:
-#       expose: false
-switch:
-  - platform: mqtt
-    name: "Woodstock Switch"
-    state_topic: "stat/sonoff-woodstock/POWER"
-    command_topic: "cmnd/sonoff-woodstock/POWER"
-    availability_topic: "tele/sonoff-woodstock/LWT"
-    payload_on: "ON"
-    payload_off: "OFF"
-    payload_available: "Online"
-    payload_not_available: "Offline"
-    qos: 1
-    retain: true
-  - platform: mqtt
-    name: "Lucy Switch"
-    state_topic: "stat/sonoff-lucy/POWER"
-    command_topic: "cmnd/sonoff-lucy/POWER"
-    availability_topic: "tele/sonoff-lucy/LWT"
-    payload_on: "ON"
-    payload_off: "OFF"
-    payload_available: "Online"
-    payload_not_available: "Offline"
-    qos: 1
-    retain: true
 vera:
   vera_controller_url: !secret vera_vera_controller_url
-
 fan:
   - platform: mqtt
     name: "Ceiling Fan"
@@ -278,30 +101,7 @@ fan:
       - high
     icon: mdi:weather-windy
 
-shell_command:
-  fan_light_on: pilight-send -p raw -c "286 676 312 312 702 676 312 676 338 676 312 676 338 676 312 676 338 676 312 676 338 650 312 676 338 8970"
-  fan_light_off: pilight-send -p raw -c "226 678 226 678 226 226 678 678 226 678 226 678 226 678 226 678 226 678 226 678 226 678 226 678 226 7684"
-  fan_off: pilight-send -p raw -c "312 702 312 728 286 702 286 728 286 702 312 338 676 702 286 728 286 702 286 702 286 702 312 702 286 8970"
-  fan_low: pilight-send -p raw -c "312 312 676 702 312 702 286 702 286 702 286 702 312 728 286 702 312 728 286 702 312 702 286 702 312 8944"
-  fan_med: pilight-send -p raw -c "263 789 263 789 263 789 263 263 789 789 263 789 263 789 263 789 263 789 263 789 263 789 263 789 263 8942"
-  fan_hi: pilight-send -p raw -c "264 792 264 792 264 792 264 792 264 264 792 792 264 792 264 792 264 792 264 792 264 792 264 792 264 8976"
-  plug_1_on: pilight-send -p raw -c "216 744 240 744 240 744 720 264 240 744 720 264 240 768 240 744 720 264 720 288 240 744 240 744 720 264 720 264 720 264 720 264 720 264 240 744 240 768 216 768 720 288 696 264 720 264 720 264 720 288 696 288 216 768 216 768 720 288 696 288 696 288 696 264 216 8328"
-  plug_1_off: pilight-send -p raw -c "230 736 253 736 253 736 736 253 253 736 736 253 253 736 253 736 736 276 713 276 253 736 253 736 736 253 736 253 736 253 713 253 713 276 253 759 230 759 230 736 253 736 736 253 736 253 713 253 736 276 713 276 253 759 253 736 230 736 253 736 253 736 253 736 230 8096"
-  plug_2_on: pilight-send -p raw -c "207 736 253 736 253 736 736 253 253 736 736 253 253 736 253 736 736 253 713 253 253 713 253 759 713 276 713 276 713 276 713 276 736 253 253 736 253 736 253 736 713 276 230 736 736 253 736 276 713 276 713 276 230 759 253 759 736 253 230 736 253 736 253 736 230 8119"
-  plug_2_off: pilight-send -p raw -c "230 736 253 736 253 736 736 253 230 759 713 253 253 759 253 759 713 253 713 276 230 759 230 759 713 299 713 253 713 276 713 276 713 253 253 736 230 759 230 736 230 759 253 736 713 276 713 276 713 276 713 276 230 759 230 759 230 759 713 276 230 759 230 736 230 8142"
-  camera_capture_video: !secret camera_capture_command
-  panasonic_tv_power: irsend SEND_ONCE Panasonic_N2QAYB000239 KEY_POWER
-  # plug_3_on: pilight-send -p raw -c "241 723 241 723 241 723 723 241 241 723 723 241 241 723 241 723 723 241 723 241 241 723 241 723 723 241 723 241 723 241 723 241 723 241 241 723 241 723 241 723 723 241 723 241 241 723 723 241 723 482 482 241 241 723 241 723 723 241 723 241 241 723 241 723 241 8194"
-  # plug_3_off: pilight-send -p raw -c "240 720 240 720 240 720 720 240 240 720 720 240 240 720 240 720 720 240 720 240 240 720 240 720 720 240 720 240 720 240 720 240 720 240 240 720 240 720 240 720 240 720 720 240 240 720 720 240 720 240 720 240 240 720 240 720 240 720 240 720 720 240 240 720 240 8160"
-  # plug_all_on: pilight-send -p raw -c ""
-  # plug_all_off: pilight-send -p raw -c ""
-
-#  scene:
-#  - name: "bedtime1"
-#    entities:
-#     input_boolean.plug_2: on
-#      input_boolean.fan_light: on
-
+shell_command: !include configuration/shell_command.yaml
 shopping_list:
 wake_on_lan:
 recorder:
@@ -312,63 +112,9 @@ logger:
   logs:
     urllib3.connectionpool: error
     homeassistant.components.media_player.spotify: debug
-
-
-
-#Start Custom Spotify Player
-input_number:
-  spotify_volume:
-    name: Volume
-    icon: mdi:volume-high
-    min: 0
-    max: 1
-    step: 0.05
-  announcements_volume:
-    name: Announcements Volume
-    icon: mdi:bullhorn
-    min: 0
-    max: 1
-    step: 0.05
-input_select:
-  spotify_playlist:
-    name: 'Playlist:'
-    options:
-      - Coffee + Chill
-      - Brekkie Time
-      - Lazy Sunday
-      - Relax & Unwind
-      - Your Favorite Coffeehouse
-    initial: Your Favorite Coffeehouse
-    icon: mdi:spotify
-  spotify_source:
-    name: 'Source:'
-    options:
-      - Everywhere
-      - iPhone
-      - Kitchen Speaker
-      - Living Room Speaker
-    initial: Everywhere
-    icon: mdi:speaker-wireless
-#End Custom Spotify Player
-google_assistant:
-  project_id: !secret google_assistant_project_id
-  client_id: !secret google_assistant_client_id
-  access_token: !secret google_assistant_access_token
-  agent_user_id: !secret google_assistant_agent_user_id
-  api_key: !secret google_assistant_api_key
-  exposed_domains:
-    - switch
-    - light
-    - group
-    - input_boolean
-  entity_config:
-    switch.lucy_switch:
-      name: Coffee Machine
-      aliases:
-        - coffee machine
-        - coffee
-      type: light
-
+input_number: !include configuration/input_number.yaml
+input_select: !include configuration/input_select.yaml
+google_assistant: !include configuration/google_assistant.yaml
 alarm_control_panel:
   - platform: manual
     name: Home Alarm
