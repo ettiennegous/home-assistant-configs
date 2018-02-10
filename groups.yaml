@@ -139,20 +139,24 @@ Miscelanious:
     - group.VariousSensors
     - group.InternetSpeedGroup
     - group.iDevices
-    - group.Climate
+    # - group.Climate
     - group.SensorNode1Card
 
 VariousSensors:
   name: Various Sensors
   entities:
-    - sensor.cpu_speed
+    - sensor.ram_used
+    - sensor.average_load_1m
+    - sensor.average_load_5m
+    - sensor.average_load_15m
+    - sensor.disk_used_home
     - sensor.ssl_certificate_expiry
 
-Climate: 
-  entities:
-    - sensor.bom_weather_air_temp_c
-    - sensor.bom_weather_rain_today
-    - sensor.bom_weather_relative_humidity
+# Climate: 
+#   entities:
+#     - sensor.bom_weather_air_temp_c
+#     - sensor.bom_weather_rain_today
+#     - sensor.bom_weather_relative_humidity
 
 SceneTriggers: 
   name: Scene Triggers

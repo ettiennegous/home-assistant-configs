@@ -1,0 +1,15 @@
+alias: 'Push Notification if the Alarm couldnt active cause a door/window is open'
+trigger:
+  platform: state
+  entity_id: alarm_control_panel.home_alarm
+  to: 'armed_away'
+condition:
+  - condition: state
+    entity_id: group.alarmsensors
+    state: 'on'
+action:
+  - service: alarm_control_panel.alarm_disarm
+    entity_id: alarm_control_panel.home_alarm
+  - service: notify.notify
+    data:
+      message: 'The alarm could not be activated, did you leave a door / window open? {{now().strftime("%Y%m%d-%H%M%S")}}'

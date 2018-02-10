@@ -1,8 +1,8 @@
 alias: 'Alarm Away when Leave home'
 trigger:
   platform: state
-  entity_id: group.PhoneTrackers
+  entity_id: group.phonetrackers
   to: 'not_home'
 action:
   service: alarm_control_panel.alarm_arm_away
-  entity_id: alarm_control_panel.alarm
+  entity_id: alarm_control_panel.home_alarm

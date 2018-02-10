@@ -3,21 +3,28 @@
   name: Ruby Room Temp
   username: !secret camera_username
   password: !secret camera_password
-- platform: cpuspeed
+- platform: systemmonitor
+  resources: 
+    - type: memory_use_percent
+    - type: disk_use_percent
+      arg: /home
+    - type: load_1m
+    - type: load_5m
+    - type: load_15m
 - platform: yr
 - platform: time_date
   display_options:
     - 'date_time'
-- platform: bom
-  station: !secret bom_station
-  name: Weather 
-  monitored_conditions:
-    - air_temp
-    - rain_trace
-    - rel_hum
-    - weather
-    - wind_dir
-    - wind_spd_kmh
+# - platform: bom
+#   station: !secret bom_station
+#   name: Weather 
+#   monitored_conditions:
+#     - air_temp
+#     - rain_trace
+#     - rel_hum
+#     - weather
+#     - wind_dir
+#     - wind_spd_kmh
 # - platform: dht
 #   name: PI Temp
 #   sensor: DHT11

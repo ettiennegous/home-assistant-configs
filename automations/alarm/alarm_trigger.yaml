@@ -1,7 +1,7 @@
 alias: 'Trigger alarm while armed away'
 trigger:
   - platform: state
-    entity_id: group.AlarmSensors
+    entity_id: group.alarmsensors
     from: 'off'
     to: 'on'
 condition:
