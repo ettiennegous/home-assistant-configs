@@ -1,0 +1,8 @@
+alias: Turn Fan High
+hide_entity: True
+trigger:
+  platform: mqtt
+  topic: ceiling_fan/speed/set
+  payload: 'high'
+action:
+  service: shell_command.fan_hi

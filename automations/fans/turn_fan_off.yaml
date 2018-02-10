@@ -1,0 +1,16 @@
+alias: Turn Fan Off
+hide_entity: True
+trigger:
+  platform: mqtt
+  topic: ceiling_fan/on/set
+  payload: 'false'
+action:
+  - service: shell_command.fan_off
+  - service: mqtt.publish
+    data:
+      topic: "ceiling_fan/on/state"
+      payload: "false"
+  - service: mqtt.publish
+    data:
+      topic: "ceiling_fan/speed/state"
+      payload: ""

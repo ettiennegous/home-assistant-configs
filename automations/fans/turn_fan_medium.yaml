@@ -1,0 +1,8 @@
+alias: Turn Fan Medium
+hide_entity: True
+trigger:
+  platform: mqtt
+  topic: ceiling_fan/speed/set
+  payload: 'medium'
+action:
+  service: shell_command.fan_med

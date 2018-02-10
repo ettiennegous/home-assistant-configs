@@ -1,0 +1,21 @@
+alias: Morning Routine Scene On
+hide_entity: True
+trigger:
+  platform: state
+  entity_id: input_boolean.morning_scene
+  from: 'off'
+  to: 'on'
+action:
+  - service: media_player.select_source
+    data:
+      entity_id: media_player.spotify
+      source: "everywhere"
+  - service: media_player.play_media
+    data: 
+      entity_id: media_player.spotify
+      media_content_type: playlist
+      media_content_id: spotify:user:spotify:playlist:37i9dQZF1DXa1BeMIGX5Du
+  - service: switch.turn_on
+    entity_id: switch.lucy_switch
+  - service: input_boolean.turn_on
+    entity_id: input_boolean.doorbell

@@ -1,0 +1,11 @@
+alias: 'Send notification when alarm triggered'
+trigger:
+  - platform: state
+    entity_id: alarm_control_panel.home_alarm
+    to: 'triggered'
+action:
+  - service: notify.notify
+    data:
+      message: 'ALARM! The alarm has been triggered {{now().strftime("%Y%m%d-%H%M%S")}}'
+  - service: script.turn_on
+    entity_id: script.light_flash

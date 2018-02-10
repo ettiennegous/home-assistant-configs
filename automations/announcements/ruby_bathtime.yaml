@@ -1,0 +1,20 @@
+alias: Ruby Bath Time
+hide_entity: True
+trigger:
+  - platform: time
+    at: '17:00:00'
+  - platform: state
+    entity_id: input_boolean.ruby_bathtime
+    from: 'off'
+    to: 'on'
+action:
+  - service: media_player.volume_set
+    data:
+      entity_id: media_player.everywhere
+      volume_level: '{{  states.input_number.announcements_volume.state  }}'
+  - service: tts.google_say
+    entity_id: media_player.everywhere
+    data:
+      message: 'Ruby its bathtime, Lets go kiddo.'
+  - service: input_boolean.turn_off
+    entity_id: input_boolean.ruby_bathtime

@@ -37,3 +37,12 @@ morning_scene:
 #   name: All Plug
 #   initial: off
 #   icon: mdi:remote
+onkyo_amp:
+  name: Onkyo Amplifier
+  icon: mdi:speaker-wireless
+panasonic_tv:
+  name: Panasonic TV
+  icon: mdi:television-classic
+photo_frame: 
+  name: Photoframe / Calendar
+  icon: mdi:image-multiple

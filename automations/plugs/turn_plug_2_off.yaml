@@ -1,0 +1,8 @@
+alias: Turn Plug 2 Off
+hide_entity: True
+trigger:
+  platform: state
+  entity_id: input_boolean.plug_2
+  to: 'off'
+action:
+  service: shell_command.plug_2_off

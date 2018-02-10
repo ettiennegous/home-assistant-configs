@@ -20,3 +20,25 @@
   payload_not_available: "Offline"
   qos: 1
   retain: true
+- platform: mqtt
+  name: "Snoopy Switch"
+  state_topic: "stat/sonoff-snoopy/POWER"
+  command_topic: "cmnd/sonoff-snoopy/POWER"
+  availability_topic: "tele/sonoff-snoopy/LWT"
+  payload_on: "ON"
+  payload_off: "OFF"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  qos: 1
+  retain: true
+- platform: mqtt
+  name: "Belle Switch"
+  state_topic: "stat/sonoff-belle/POWER"
+  command_topic: "cmnd/sonoff-belle/POWER"
+  availability_topic: "tele/sonoff-belle/LWT"
+  payload_on: "ON"
+  payload_off: "OFF"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  qos: 1
+  retain: true

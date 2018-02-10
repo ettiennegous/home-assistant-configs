@@ -1,0 +1,10 @@
+alias: MQTT Camera Event
+hide_entity: True
+trigger:
+  platform: mqtt
+  topic: topic/test
+action:
+  - service: notify.notify
+    data_template:
+      message: >
+        Camera Event {{ trigger.payload }}

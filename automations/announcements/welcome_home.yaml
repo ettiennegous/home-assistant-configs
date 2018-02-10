@@ -1,0 +1,15 @@
+alias: 'Welcome Person Home'
+trigger:
+  platform: state
+  entity_id: device_tracker.ettiennes_iphone, device_tracker.kkramers_iphone
+  from: 'not_home'
+  to: 'home'
+  for:
+    minutes: 0
+action:
+  - service: tts.google_say
+    data_template:
+      entity_id: media_player.everywhere
+      language: en
+      message: > 
+        Welcome home {{ trigger.to_state.attributes.friendly_name }}.

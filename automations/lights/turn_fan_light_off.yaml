@@ -1,0 +1,8 @@
+alias: Turn Fan Light Off
+hide_entity: True
+trigger:
+  platform: state
+  entity_id: input_boolean.fan_light
+  to: 'off'
+action:
+  service: shell_command.fan_light_off

@@ -1,0 +1,12 @@
+alias: 'Disarmed Off'
+hide_entity: True
+trigger:
+  - platform: state
+    entity_id: alarm_control_panel.home_alarm
+    to: 'disarmed'
+action:
+  - service: script.turn_off
+    entity_id: script.light_loop
+  - service: notify.notify
+    data:
+      message: 'Home Alarm Reset {{now().strftime("%Y%m%d-%H%M%S")}}'

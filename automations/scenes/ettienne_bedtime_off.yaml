@@ -1,0 +1,15 @@
+alias: Bedtime Scene Off
+hide_entity: True
+trigger:
+  platform: state
+  entity_id: input_boolean.bedtime_scene
+  from: 'on'
+  to: 'off'
+action:
+  - service: light.turn_off
+    data: 
+      entity_id: light.charlie_dimmable_13
+  - service: input_boolean.turn_off
+    entity_id: input_boolean.fan_light
+  - service: switch.turn_off
+    entity_id: switch.woodstock_switch

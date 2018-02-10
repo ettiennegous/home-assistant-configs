@@ -1,0 +1,10 @@
+alias: Photoframe State Change
+trigger:
+  platform: state
+  entity_id: input_boolean.photo_frame
+action:
+  service: mqtt.publish
+  data_template:
+    topic: "photo_frame/show_photos"
+    retain: true
+    payload: "{{states.input_boolean.photo_frame}}"

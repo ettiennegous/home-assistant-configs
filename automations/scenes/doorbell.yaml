@@ -1,0 +1,36 @@
+alias: Doorbell
+hide_entity: True
+trigger: 
+  platform: state
+  entity_id: binary_sensor.outside_motion_sensor_18
+  from: 'off'
+  to: 'on'
+condition:
+  condition: and
+  conditions:
+    - condition: state
+      entity_id: binary_sensor.front_door_sensor_6
+      state: 'off'
+    - condition: state
+      entity_id: input_boolean.doorbell
+      state: 'on'
+action:
+  - service: shell_command.camera_capture_video
+  - service: media_player.volume_set
+    data_template:
+      entity_id: media_player.everywhere
+      volume_level: '{{  states.input_number.announcements_volume.state  }}'
+  - service: media_player.play_media
+    data:
+      entity_id: media_player.everywhere
+      media_content_id: !secret doorbell_mp3_url
+      media_content_type: audio/mp3
+  - service: notify.All_iOS_Devices
+    data:
+      message: 'Ding Dong Front Door {{now().strftime("%Y%m%d-%H%M%S")}}'
+      data:
+        attachment:
+          content-type: jpeg
+        push:
+          category: camera
+        entity_id: camera.front_door_cam
