@@ -10,12 +10,3 @@ action:
     entity_id: media_player.everywhere
   - service: switch.turn_off
     entity_id: switch.lucy_switch
-- alias: 'Set Spotify Volume'
-trigger:
-    platform: state
-    entity_id: input_number.spotify_volume
-action:
-    service: media_player.volume_set
-    data_template:
-      entity_id: media_player.spotify
-      volume_level: '{{  states.input_number.spotify_volume.state  }}'
