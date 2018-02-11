@@ -1,0 +1,15 @@
+alias: Front Door Video Capture
+hide_entity: True
+trigger: 
+  platform: state
+  entity_id: binary_sensor.outside_motion_sensor_18
+  from: 'off'
+  to: 'on'
+condition:
+  condition: and
+  conditions:
+    - condition: state
+      entity_id: binary_sensor.front_door_sensor_6
+      state: 'off'
+action:
+  - service: shell_command.camera_capture_video

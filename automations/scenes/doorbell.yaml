@@ -15,7 +15,6 @@ condition:
       entity_id: input_boolean.doorbell
       state: 'on'
 action:
-  - service: shell_command.camera_capture_video
   - service: media_player.volume_set
     data_template:
       entity_id: media_player.everywhere

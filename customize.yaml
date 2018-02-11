@@ -1,12 +1,12 @@
 input_boolean.fan_light:
   homebridge_switch_type: outlet
-  homebridge_name: Fan Light
+  homebridge_name: Ceiling Fan Light
   homebridge_visible: true
 
 input_boolean.plug_1:
   homebridge_switch_type: outlet
   homebridge_visible: true
-  homebridge_name: Fan
+  homebridge_name: Ruby Fan
   friendly_name: Ruby's Fan
 
 switch.woodstock_switch:
@@ -18,7 +18,7 @@ switch.woodstock_switch:
 
 fan.ceiling_fan:
   homebridge_visible: true
-  homebridge_name: Fan
+  homebridge_name: Ceiling Fan
 
 device_tracker.ettiennes_iphone:
   friendly_name: Ettienne
@@ -28,6 +28,9 @@ device_tracker.kkramers_iphone:
 
 switch.lucy_switch:
   friendly_name: Coffee Machine
+  homebridge_switch_type: outlet
+  homebridge_visible: true
+  homebridge_name: Coffee Machine
   icon: mdi:coffee
 
 script.spotify_music:
@@ -36,22 +39,42 @@ script.spotify_music:
 
 light.charlie_dimmable_13:
   friendly_name: 'Standing Light'
+  homebridge_visible: true
+  homebridge_name: Standing Light
   icon: mdi:ceiling-light
 
 sensor.living_room_temp_sensor_8:
   friendly_name: 'Temperature'
+  homebridge_visible: true
+  homebridge_name: Living Room Temp
 
 sensor.living_room_light_sensor_9:
   friendly_name: 'Light'
+  homebridge_visible: true
+  homebridge_name: Living Lux
 
 binary_sensor.living_room_sliding_door_sensor_11:
   friendly_name: 'Door Open'
   icon: mdi:lock-open
+  homebridge_visible: true
+  homebridge_name: Living Sliding Door
 
 binary_sensor.living_room_motion_sensor_7:
   friendly_name: 'Motion'
   icon: mdi:cursor-move
+  homebridge_visible: true
+  homebridge_name: Living Room Motion
 
 sensor.living_room_humidity_sensor_10:
   friendly_name: 'Humidity'
   icon: mdi:water-percent
+  homebridge_visible: true
+  homebridge_name: Living Room Humidity
+
+input_boolean.bedtime_scene:
+  homebridge_visible: true
+  homebridge_name: Ett Bedtime
+
+input_boolean.morning_scene:
+  homebridge_visible: true
+  homebridge_name: Morning Routine
