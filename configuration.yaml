@@ -52,7 +52,7 @@ tts:
   - platform: google
 # Cloud
 cloud:
-ios:
+#ios:
 notify:
   - name: All_iOS_Devices
     platform: group
@@ -89,7 +89,7 @@ fan:
     speed_state_topic: "ceiling_fan/speed/state"
     speed_command_topic: "ceiling_fan/speed/set"
     qos: 0
-    retain: false
+    retain: true
     payload_on: "true"
     payload_off: "false"
     payload_low_speed: "low"
@@ -118,8 +118,38 @@ wake_on_lan:
 recorder:
   purge_interval: 1
   purge_keep_days: 1
+  include:
+    domains:
+      - sensor
+      - binary_sensor
+      - switch
+      - media_player
+      - input_boolean
+      - input_number
+      - input_select
+      - input_datetime
+      - input_text
+      - fan
+      - light
+      - alarm_control_panel
+  exclude:
+    entities:
+      - sensor.ram_used
+      - sensor.average_load_1m
+      - sensor.average_load_5m
+      - sensor.average_load_15m
+      - sensor.disk_used_home
+      - sensor.ssl_certificate_expiry
+      - sensor.iphone_battery_level
+      - sensor.kellys_ipad_battery_level
+      - sensor.sn1_temperature
+      - sensor.sn1_humidity
+      - sensor.sn1_ldr
+      - sensor.sn1_pir
+      - light.sn1_led
+      - sensor.sn1_distance
 logger:
-  default: warn
+  default: error
   logs:
     urllib3.connectionpool: error
     homeassistant.components.media_player.spotify: debug

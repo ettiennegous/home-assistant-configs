@@ -1,0 +1,21 @@
+alias: Entrance Hall Motion Light
+hide_entity: True
+trigger:
+  platform: state
+  entity_id: binary_sensor.foyer_motion_sensor_14
+  from: 'off'
+  to: 'on'
+condition:
+  - condition: numeric_state
+    entity_id: sensor.foyer_light_sensor_16
+    below: 50
+action:
+  - service: light.turn_on
+    data: 
+      entity_id: light.charlie_dimmable_13
+      brightness: 40 # 0 to 255
+  - delay:
+      minutes: 2
+  - service: light.turn_off
+    data:
+      entity_id: light.charlie_dimmable_13

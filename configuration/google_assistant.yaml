@@ -15,7 +15,6 @@ entity_config:
       - coffee machine
       - coffee
     type: light
-entity_config:
   input_boolean.plug_1:
     name: Ruby's Fan
     aliases:
@@ -23,7 +22,6 @@ entity_config:
       - fan ruby
       - fan in ruby's room
     type: fan
-entity_config:
   fan.ceiling_fan:
     name: Living Room Fan
     aliases:

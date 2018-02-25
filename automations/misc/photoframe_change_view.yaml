@@ -7,4 +7,4 @@ action:
   data_template:
     topic: "photo_frame/show_photos"
     retain: true
-    payload: "{{states.input_boolean.photo_frame}}"
+    payload: "{{states.input_boolean.photo_frame.state == 'on'}}"
