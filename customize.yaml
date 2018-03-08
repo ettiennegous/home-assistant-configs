@@ -78,3 +78,21 @@ input_boolean.bedtime_scene:
 input_boolean.morning_scene:
   homebridge_visible: true
   homebridge_name: Morning Routine
+
+sensor.time_to_home:
+  icon: mdi:mdi:home-heart
+
+sensor.time_to_work:
+  icon: mdi:domain
+
+script.panasonic_tv_power:
+  icon: mdi:television-classic
+
+script.onkyo_amp_power:
+  icon: mdi:speaker-wireless
+
+script.onkyo_volume_up:
+  icon: mdi:volume-plus
+
+script.onkyo_volume_down:
+  icon: mdi:volume-minus

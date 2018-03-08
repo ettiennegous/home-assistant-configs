@@ -66,12 +66,7 @@ group: !include groups.yaml
 automation: !include_dir_list automations/
 script: !include scripts.yaml
 camera: !include configuration/camera.yaml
-device_tracker:
-  - platform: tomato
-    host: !secret tomato_host
-    username: !secret tomato_username
-    password: !secret tomato_password
-    http_id: !secret tomato_http_id
+device_tracker: !include configuration/device_tracker.yaml
 duckdns:
   domain: !secret duckdns_domain
   access_token: !secret duckdns_access_token
@@ -101,6 +96,11 @@ fan:
       - high
     icon: mdi:weather-windy
 
+binary_sensor:
+  - platform: rpi_gpio
+    ports:
+      26: Living Room Motion Sensor
+      
 light:  
   - platform: mqtt_json  
     name: "SN1 LED"  

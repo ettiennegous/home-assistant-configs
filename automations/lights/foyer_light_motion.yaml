@@ -7,7 +7,7 @@ trigger:
   to: 'on'
 condition:
   - condition: numeric_state
-    entity_id: sensor.foyer_light_sensor_16
+    entity_id: sensor.outside_light_sensor_20
     below: 50
 action:
   - service: light.turn_on

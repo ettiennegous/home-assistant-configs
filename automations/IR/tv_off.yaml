@@ -1,8 +1,0 @@
-alias: Turn TV Off
-hide_entity: True
-trigger:
-  platform: state
-  entity_id: input_boolean.panasonic_tv
-  to: 'off'
-action:
-  service: shell_command.panasonic_tv_power

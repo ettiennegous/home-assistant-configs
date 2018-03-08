@@ -32,8 +32,9 @@
 #   monitored_conditions:
 #     - temperature
 #     - humidity
-# - platform: bh1750
-#   i2c_address: 0x23
+- platform: bh1750
+  name: Living Room Light Sensor
+  i2c_address: 0x23
 - platform: speedtest
   monitored_conditions:
     - ping
@@ -83,3 +84,15 @@
   name: "SN1 Distance"
   unit_of_measurement: "cm"
   value_template: '{{ value_json.distance | round(1) }}'
+
+- platform: google_travel_time
+  name: "Time to home"
+  api_key: !secret google_assistant_api_key
+  origin: device_tracker.ett_iphone
+  destination: !secret home_address
+
+- platform: google_travel_time
+  name: "Time to work"
+  api_key: !secret google_assistant_api_key
+  origin: device_tracker.ett_iphone
+  destination: !secret work_address

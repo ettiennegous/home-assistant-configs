@@ -1,0 +1,15 @@
+alias: Wake AV on movement
+hide_entity: True
+trigger: 
+  platform: state
+  entity_id: binary_sensor.living_room_motion_sensor
+  from: 'off'
+  to: 'on'
+condition:
+  - condition: numeric_state
+    entity_id: sensor.living_room_light_sensor
+    above: 50
+action:
+  - service: shell_command.onkyo_source_dvd
+  - service: shell_command.onkyo_source_dvd
+  - service: shell_command.onkyo_source_dvd

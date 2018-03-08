@@ -19,3 +19,7 @@ action:
     entity_id: switch.lucy_switch
   - service: input_boolean.turn_on
     entity_id: input_boolean.doorbell
+  - service: input_number.set_value
+    data_template:
+      entity_id: input_number.announcements_volume
+      value: 0.5

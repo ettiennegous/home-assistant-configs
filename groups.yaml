@@ -24,8 +24,10 @@ LivingRoomAV:
   name: Living Room AV
   control: hidden
   entities:
-    - input_boolean.panasonic_tv
-    - input_boolean.onkyo_amp
+    - script.panasonic_tv_power
+    - script.onkyo_amp_power
+    - script.onkyo_volume_up
+    - script.onkyo_volume_down
 
 LivingRoomFan:
   name: Living Room Fan
@@ -42,6 +44,8 @@ LivingRoomSensors:
     - binary_sensor.living_room_sliding_door_sensor_11
     - binary_sensor.living_room_motion_sensor_7
     - sensor.living_room_humidity_sensor_10
+    - binary_sensor.living_room_motion_sensor
+    - sensor.living_room_light_sensor
 
 Kitchen:
   name: Kitchen
@@ -126,6 +130,8 @@ Family:
   entities:
     - device_tracker.ettiennes_iphone
     - device_tracker.kkramers_iphone    
+    - sensor.time_to_home
+    - sensor.time_to_work
 
 PhoneTrackers: 
   entities:

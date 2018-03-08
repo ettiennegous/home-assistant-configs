@@ -58,3 +58,19 @@ light_loop:
     - service: script.turn_on
       data:
         entity_id: script.light_flash
+panasonic_tv_power:
+  alias: Panasonic TV Power
+  sequence:
+    - service: shell_command.panasonic_tv_power
+onkyo_amp_power:
+  alias: Onkyo AMP Power
+  sequence:
+    - service: shell_command.onkyo_amp_power
+onkyo_volume_up:
+  alias: Onkyo Volume Up
+  sequence:
+    - service: shell_command.onkyo_volume_up
+onkyo_volume_down:
+  alias: Onkyo Volume Down
+  sequence:
+    - service: shell_command.onkyo_volume_down

@@ -1,0 +1,10 @@
+- platform: owntracks_http
+# - platform: tomato
+#   host: !secret tomato_host
+#   username: !secret tomato_username
+#   password: !secret tomato_password
+#   http_id: !secret tomato_http_id
+# - platform: ping
+#   hosts:
+#     ettiennes_iphone: !secret ettienne_iphone_ip
+#     kkramers_iphone: !secret kelly_iphone_ip

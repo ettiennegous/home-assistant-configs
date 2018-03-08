@@ -16,3 +16,7 @@ action:
     entity_id: switch.woodstock_switch
   - service: input_boolean.turn_off
     entity_id: input_boolean.doorbell
+  - service: input_number.set_value
+    data_template:
+      entity_id: input_number.announcements_volume
+      value: 0
