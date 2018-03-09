@@ -83,8 +83,6 @@ EntranceHallAndKitchen:
     - input_boolean.photo_frame
     - switch.lucy_switch
     - light.charlie_dimmable_13
-    - switch.snoopy_switch
-    - switch.belle_switch
 
 RubysRoom:
   name: Rubys Room
@@ -97,7 +95,7 @@ RubysRoom:
 RubySwitches:
   name: Switches
   entities:
-    - input_boolean.plug_1
+    - switch.snoopy_switch
     - sensor.ruby_room_temp
 
 MainBedRoom:
@@ -106,6 +104,7 @@ MainBedRoom:
   icon: mdi:hotel
   entities:
     - switch.woodstock_switch
+    - switch.belle_switch
 
 iDevices:
   name: iDevices

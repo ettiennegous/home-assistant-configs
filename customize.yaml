@@ -3,11 +3,17 @@ input_boolean.fan_light:
   homebridge_name: Ceiling Fan Light
   homebridge_visible: true
 
-input_boolean.plug_1:
+switch.snoopy_switch:
   homebridge_switch_type: outlet
   homebridge_visible: true
   homebridge_name: Ruby Fan
   friendly_name: Ruby's Fan
+
+switch.belle_switch:
+  homebridge_switch_type: outlet
+  homebridge_visible: true
+  homebridge_name: Bedroom Fan
+  friendly_name: Bedroom Fan
 
 switch.woodstock_switch:
   homebridge_switch_type: outlet
