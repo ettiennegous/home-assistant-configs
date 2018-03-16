@@ -1,0 +1,18 @@
+alias: Living Room Linked Dimmers On
+hide_entity: True
+trigger:
+  platform: state
+  entity_id: light.living_dimmer_1_27
+  from: 'off'
+  to: 'on'
+condition:
+  condition: and
+  conditions: 
+    - condition: state
+      entity_id: input_boolean.auto_lights
+      state: 'on'
+action:
+  - service: light.turn_on
+    data_template: 
+      entity_id: light.living_dimmer_2_28
+      brightness: "{{ states.light.living_dimmer_1_27.attributes.brightness }}"

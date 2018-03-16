@@ -35,6 +35,8 @@
 - platform: bh1750
   name: Living Room Light Sensor
   i2c_address: 0x23
+  operation_mode: continuous_high_res_mode_1
+  multiplier: 10
 - platform: speedtest
   monitored_conditions:
     - ping

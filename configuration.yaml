@@ -100,6 +100,11 @@ binary_sensor:
   - platform: rpi_gpio
     ports:
       26: Living Room Motion Sensor
+  - platform: mqtt
+    name: Kitchen Motion Sensor
+    state_topic: "kitchen/motion_sensor"
+    payload_on: "1"
+    payload_off: "0"
       
 light:  
   - platform: mqtt_json  

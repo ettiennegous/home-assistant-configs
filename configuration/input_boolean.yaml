@@ -40,3 +40,6 @@ morning_scene:
 photo_frame: 
   name: Photoframe / Calendar
   icon: mdi:image-multiple
+auto_lights: 
+  name: Auto Lights
+  icon: mdi:lightbulb-on-outline

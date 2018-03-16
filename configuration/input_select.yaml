@@ -17,3 +17,10 @@ spotify_source:
     - Living Room Speaker
   initial: Everywhere
   icon: mdi:speaker-wireless
+home_status_dropdown:
+  name: Home Status Dropdown
+  options:
+    - Home
+    - Away
+    - Sleeping
+  initial: Home
