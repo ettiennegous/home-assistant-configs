@@ -1,10 +1,12 @@
 alias: Garage Door Closed Car
 hide_entity: True
 trigger:
-  platform: numeric_state
-  entity_id: sensor.sn1_distance
-  above: 12
-  below: 130
+  - platform: homeassistant
+    event: start
+  - platform: numeric_state
+    entity_id: sensor.sn1_distance
+    above: 12
+    below: 130
 action:
   - service: input_select.select_option
     data:

@@ -30,4 +30,3 @@ garage_status_dropdown:
     - Door Open
     - Door Closed No Car
     - Door Closed Car
-  initial: Door Open

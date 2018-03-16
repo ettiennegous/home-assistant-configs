@@ -1,0 +1,17 @@
+alias: Garage Light
+hide_entity: True
+trigger:
+  platform: state
+  entity_id: input_select.garage_status_dropdown
+  to: 'Door Open'
+condition:
+  condition: and
+  conditions: 
+    - condition: numeric_state
+      entity_id: sensor.outside_light_sensor_20
+      below: 51
+    - condition: state
+      entity_id: input_boolean.auto_lights
+      state: 'on'   
+action:
+  - service: script.garage_light_on

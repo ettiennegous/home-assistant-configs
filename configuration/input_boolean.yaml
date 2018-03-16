@@ -43,3 +43,4 @@ photo_frame:
 auto_lights: 
   name: Auto Lights
   icon: mdi:lightbulb-on-outline
+  initial: on
