@@ -227,10 +227,10 @@ WebLinks:
 
 GarageSensors:  
   name: Garage Sensors  
-  entities:  
+  entities:
     - sensor.sn1_temperature
     - sensor.sn1_humidity
     - sensor.sn1_ldr
-    - sensor.sn1_pir
     - light.sn1_led
     - sensor.sn1_distance
+    - input_select.garage_status_dropdown

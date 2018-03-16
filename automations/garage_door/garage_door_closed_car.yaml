@@ -1,0 +1,12 @@
+alias: Garage Door Closed Car
+hide_entity: True
+trigger:
+  platform: numeric_state
+  entity_id: sensor.sn1_distance
+  above: 12
+  below: 130
+action:
+  - service: input_select.select_option
+    data:
+      entity_id: input_select.garage_status_dropdown
+      option: Door Closed Car

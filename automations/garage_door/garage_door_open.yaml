@@ -1,0 +1,11 @@
+alias: Garage Door Open
+hide_entity: True
+trigger:
+  platform: numeric_state
+  entity_id: sensor.sn1_distance
+  below: 12
+action:
+  - service: input_select.select_option
+    data:
+      entity_id: input_select.garage_status_dropdown
+      option: Door Open

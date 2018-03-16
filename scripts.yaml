@@ -49,6 +49,7 @@ light_flash:
     - service: script.turn_on
       data:
         entity_id: script.light_loop
+
 light_loop:
   alias: Light flash loop
   sequence:
@@ -58,10 +59,12 @@ light_loop:
     - service: script.turn_on
       data:
         entity_id: script.light_flash
+
 panasonic_tv_power:
   alias: Panasonic TV Power
   sequence:
     - service: shell_command.panasonic_tv_power
+
 onkyo_amp_power:
   alias: Onkyo AMP Power
   sequence:
@@ -74,3 +77,35 @@ onkyo_volume_down:
   alias: Onkyo Volume Down
   sequence:
     - service: shell_command.onkyo_volume_down
+
+foyer_motion_light_standing_on:
+  alias: Foyer Motion Light Standing On
+  sequence:
+    - condition: state
+      entity_id: light.charlie_dimmable_13
+      state: 'off'
+    - service: light.turn_on
+      data: 
+        entity_id: light.charlie_dimmable_13
+        brightness: 40 # 0 to 255
+    - delay:
+        minutes: 2
+    - service: light.turn_off
+      data:
+        entity_id: light.charlie_dimmable_13
+
+foyer_motion_light_dimmer2_on:
+  alias: Foyer Motion Light Dimmer2 On
+  sequence:
+    - condition: state
+      entity_id: light.living_dimmer_2_28
+      state: 'off'
+    - service: light.turn_on
+      data: 
+        entity_id: light.living_dimmer_2_28
+        brightness: 40 # 0 to 255
+    - delay:
+        minutes: 2
+    - service: light.turn_off
+      data:
+        entity_id: light.living_dimmer_2_28
