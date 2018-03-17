@@ -1,0 +1,23 @@
+alias: Night Home
+hide_entity: True
+trigger:
+  platform: state
+  entity_id: group.indoormotionsensors
+  from: 'off'
+  to: 'on'
+condition:
+  condition: and
+  conditions: 
+    - condition: sun
+      after: sunset
+      after_offset: "-1:00:00"
+    - condition: time
+      before: '21:00:00'
+    - condition: state
+      entity_id: group.phonetrackers
+      state: 'home'
+action:
+  - service: input_select.select_option
+    data:
+      entity_id: input_select.home_status_dropdown
+      option: Night Home

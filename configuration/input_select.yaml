@@ -20,10 +20,11 @@ spotify_source:
 home_status_dropdown:
   name: Home Status Dropdown
   options:
-    - Home
-    - Away
+    - Morning Home
+    - Day Home
+    - Night Home
     - Sleeping
-  initial: Home
+    - Away
 garage_status_dropdown:
   name: Garage Status Dropdown
   options:

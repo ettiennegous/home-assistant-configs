@@ -1,0 +1,22 @@
+alias: Day Home
+hide_entity: True
+trigger:
+  platform: state
+  entity_id: group.indoormotionsensors
+  from: 'off'
+  to: 'on'
+condition:
+  condition: and
+  conditions: 
+    - condition: time
+      after: '11:00:00'
+    - condition: sun
+      before: sunset
+    - condition: state
+      entity_id: group.phonetrackers
+      state: 'home'
+action:
+  - service: input_select.select_option
+    data:
+      entity_id: input_select.home_status_dropdown
+      option: Day Home
