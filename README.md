@@ -9,11 +9,13 @@ All the configs for my home automation based on [home-assistant.io](https://home
 - 433 Mhz Plugs + Ceiling Fan
 - Sonoff S20 Plugs flashed with [Sonoff-Tasmota](https://github.com/arendst/Sonoff-Tasmota)
 - Onkyo Amplifier
+- Two Aeotec Gen 5 Nano Dimmers
+- Two Aeotec Micro Switches
 
 ### Whats broken
 - Trigger Spotify playlist
 - Morning scene automation
-- Currently when the system restarts the ceiling fan turns on?
 
 ### Whats yet to be done
-- Send a push notification with photo when the front door bell rings
+- Fix alarm triggers
+- Troubleshoot presence detection
