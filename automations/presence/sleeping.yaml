@@ -6,7 +6,7 @@ trigger:
   from: 'on'
   to: 'off'
   for:
-    minutes: 45
+    minutes: 15
 condition:
   condition: and
   conditions: 

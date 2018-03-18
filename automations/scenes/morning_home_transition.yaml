@@ -1,0 +1,13 @@
+alias: Morning Home Transition
+hide_entity: True
+trigger:
+  platform: state
+  entity_id: input_select.home_status_dropdown
+  to: 'Morning Home'
+action:
+  - service: input_number.set_value
+    data:
+      entity_id: input_number.announcements_volume
+      value: 0.4
+  - service: input_boolean.turn_on
+    entity_id: input_boolean.doorbell

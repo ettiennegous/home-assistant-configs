@@ -48,17 +48,22 @@ light_flash:
         entity_id: light.charlie_dimmable_13
     - service: script.turn_on
       data:
-        entity_id: script.light_loop
+        entity_id: script.light_loop_on
 
-light_loop:
-  alias: Light flash loop
+light_loop_on:
+  alias: Light flash loop on
   sequence:
     - delay:
-        # time for flash light off
         seconds: 1
     - service: script.turn_on
       data:
         entity_id: script.light_flash
+
+light_loop_off:
+  alias: Light flash loop off
+  sequence:
+    - service: script.turn_off
+      entity_id: script.light_loop_on
 
 panasonic_tv_power:
   alias: Panasonic TV Power

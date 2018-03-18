@@ -183,6 +183,7 @@ VariousSensors:
     - sensor.average_load_15m
     - sensor.disk_used_home
     - sensor.ssl_certificate_expiry
+    - script.light_loop_off
 
 # Climate: 
 #   entities:

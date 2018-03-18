@@ -6,3 +6,4 @@ dehydrated/**
 www/**
 secrets.yaml
 known_devices.yaml
+known_devices.old*

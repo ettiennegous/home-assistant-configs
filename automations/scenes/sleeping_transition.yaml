@@ -1,0 +1,13 @@
+alias: Sleeping Transition
+hide_entity: True
+trigger:
+  platform: state
+  entity_id: input_select.home_status_dropdown
+  to: 'Sleeping'
+action:
+  - service: input_number.set_value
+    data:
+      entity_id: input_number.announcements_volume
+      value: 0.0
+  - service: input_boolean.turn_off
+    entity_id: input_boolean.doorbell
