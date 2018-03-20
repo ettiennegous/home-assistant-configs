@@ -123,6 +123,8 @@ RubySwitches:
   entities:
     - switch.snoopy_switch
     - sensor.ruby_room_temp
+    - light.ruby_night_light
+    - script.ruby_light_show_loop_on
 
 MainBedRoom:
   name: Main Bedroom

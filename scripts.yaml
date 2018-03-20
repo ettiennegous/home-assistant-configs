@@ -142,3 +142,25 @@ front_door_light_on:
     - service: switch.turn_off
       data:
         entity_id: switch.foyer_light_29
+
+ruby_light_show:
+  alias: Ruby Light Show
+  sequence: 
+    - service: light.turn_on
+      entity_id: light.ruby_night_light
+      data_template:
+        color_name: >
+              {{['magenta','lime','red','teal','turquoise','violet','slateblue','orange','lightpink','hotpink','greenyellow','fuchsia','forestgreen','deepskyblue','deeppink','darkorange','cyan','aqua']|random}}
+        transition: 2
+    - service: script.turn_on
+      data:
+        entity_id: script.ruby_light_show_loop_on
+
+ruby_light_show_loop_on:
+  alias: Ruby Light Show Loop On
+  sequence:
+    - delay:
+        seconds: 10
+    - service: script.turn_on
+      data:
+        entity_id: script.ruby_light_show
