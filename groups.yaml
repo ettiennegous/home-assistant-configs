@@ -151,7 +151,6 @@ Speakers:
   name: Speakers
   entities:
     - media_player.everywhere
-    - media_player.spotify
 
 Family: 
   entities:

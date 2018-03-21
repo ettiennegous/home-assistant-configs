@@ -1,4 +1,4 @@
-alias: Garage Door Open
+alias: Garage Door Closed No Car
 hide_entity: True
 trigger:
   - platform: homeassistant

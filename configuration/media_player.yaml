@@ -1,16 +1,16 @@
 - platform: onkyo
   host: !secret onkyo_host
   name: Onkyo Amplifier
-- platform: spotify
-  client_id: !secret spotify_client_id
-  client_secret: !secret spotify_client_secret
-  name: Spotify
-  aliases: 
-    !secret spotify_alias_everwhere: 'Everywhere'
-    !secret spotify_alias_study_pc: 'Study PC'
-    !secret spotify_alias_iphone: 'Ett iPhone'
-    !secret spotify_alias_kitchen_speaker: 'Kitchen Speaker'
-    !secret spotify_alias_living_room_speaker: 'Living Room Speaker'
+#- platform: spotify
+#  client_id: !secret spotify_client_id
+#  client_secret: !secret spotify_client_secret
+#  name: Spotify
+#  aliases: 
+#    !secret spotify_alias_everwhere: 'Everywhere'
+#    !secret spotify_alias_study_pc: 'Study PC'
+#    !secret spotify_alias_iphone: 'Ett iPhone'
+#    !secret spotify_alias_kitchen_speaker: 'Kitchen Speaker'
+#    !secret spotify_alias_living_room_speaker: 'Living Room Speaker'
 - platform: cast
   name: Living Room Speaker
   host: !secret living_room_speaker_host

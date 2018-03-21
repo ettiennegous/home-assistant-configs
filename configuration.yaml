@@ -167,7 +167,6 @@ logger:
   default: error
   logs:
     urllib3.connectionpool: error
-    homeassistant.components.media_player.spotify: debug
 input_number: !include configuration/input_number.yaml
 input_select: !include configuration/input_select.yaml
 google_assistant: !include configuration/google_assistant.yaml
@@ -186,3 +185,6 @@ weblink:
     - name: Front Door Camera
       url: !secret front_door_cam_url
       icon: mdi:cctv
+
+homekit:
+  pincode: !secret homekit_pincode

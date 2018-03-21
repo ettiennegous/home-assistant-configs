@@ -51,7 +51,7 @@ foyer_motion_light_standing_on:
   alias: Foyer Motion Light Standing On
   sequence:
     - condition: state
-      entity_id: switch.lucy_switch
+      entity_id: light.charlie_dimmable_13
       state: 'off'
     - service: switch.turn_on
       entity_id: switch.lucy_switch
@@ -67,16 +67,12 @@ foyer_motion_light_dimmer2_on:
     - condition: state
       entity_id: light.living_dimmer_2_28
       state: 'off'
-    - service: light.turn_on
-      data: 
-        entity_id: light.living_dimmer_2_28
-        brightness: 40 # 0 to 255
+    - service: switch.turn_on
+      entity_id: switch.lucy_switch
     - delay:
         minutes: 2
-    - service: light.turn_off
-      data:
-        entity_id: light.living_dimmer_2_28
-
+    - service: switch.turn_off
+      entity_id: switch.living_dimmer_2_
 garage_light_on:
   alias: Garage Light On
   sequence:
@@ -91,7 +87,6 @@ garage_light_on:
     - service: switch.turn_off
       data:
         entity_id: switch.garage_light_26
-
 front_door_light_on:
   alias: Front Door Light On
   sequence:
@@ -117,7 +112,8 @@ ruby_light_show:
               {{['magenta','lime','red','teal','turquoise','violet','slateblue','orange','lightpink','hotpink','greenyellow','fuchsia','forestgreen','deepskyblue','deeppink','darkorange','cyan','aqua']|random}}
         transition: 2
     - service: script.turn_on
-      entity_id: script.ruby_light_show_loop_on
+      data:
+        entity_id: script.ruby_light_show_loop_on
 
 ruby_light_show_loop_on:
   alias: Ruby Light Show Loop On
@@ -125,4 +121,5 @@ ruby_light_show_loop_on:
     - delay:
         seconds: 10
     - service: script.turn_on
-      entity_id: script.ruby_light_show
+      data:
+        entity_id: script.ruby_light_show
