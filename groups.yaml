@@ -185,7 +185,16 @@ VariousSensors:
     - sensor.disk_used_home
     - sensor.ssl_certificate_expiry
     - script.light_loop_off
-
+    - input_boolean.rf_remote_1_on
+    - input_boolean.rf_remote_1_off
+    - input_boolean.rf_remote_2_on
+    - input_boolean.rf_remote_2_off
+    - input_boolean.rf_remote_3_on
+    - input_boolean.rf_remote_3_off
+    - input_boolean.rf_remote_4_on
+    - input_boolean.rf_remote_4_off
+    - input_boolean.rf_remote_all_on
+    - input_boolean.rf_remote_all_off
 # Climate: 
 #   entities:
 #     - sensor.bom_weather_air_temp_c

@@ -4,12 +4,42 @@ doorbell:
 fan_light:
   name: Light
   icon: mdi:lightbulb-on
-plug_1:
-  name: Ruby Fan
-  icon: mdi:fan
-# plug_2:
-#   name: Plug 2 Unassigned
-#   icon: mdi:power-plug
+
+rf_remote_1_on:
+  name: Rf Remote 1 On
+  icon: mdi:remote
+rf_remote_1_off:
+  name: Rf Remote 1 Off
+  icon: mdi:remote
+
+rf_remote_2_on:
+  name: Rf Remote 2 On
+  icon: mdi:remote
+rf_remote_2_off:
+  name: Rf Remote 2 Off
+  icon: mdi:remote
+
+rf_remote_3_on:
+  name: Rf Remote 3 On
+  icon: mdi:remote
+rf_remote_3_off:
+  name: Rf Remote 3 Off
+  icon: mdi:remote
+
+rf_remote_4_on:
+  name: Rf Remote 4 On
+  icon: mdi:remote
+rf_remote_4_off:
+  name: Rf Remote 4 Off
+  icon: mdi:remote
+
+rf_remote_all_on:
+  name: Rf Remote All On
+  icon: mdi:remote
+rf_remote_all_off:
+  name: Rf Remote All Off
+  icon: mdi:remote
+  
 bedtime_scene:
   name: Ett Bedtime 
   icon: mdi:login
@@ -25,18 +55,6 @@ ruby_bedtime:
 morning_scene:
   name: Morning Routine
   icon: mdi:weather-sunset-up
-# plug_3:
-#   name: Plug 3
-#   initial: off
-#   icon: mdi:remote
-# plug_4:
-#   name: Plug 4
-#   initial: off
-#   icon: mdi:remote
-# plugs_all:
-#   name: All Plug
-#   initial: off
-#   icon: mdi:remote
 photo_frame: 
   name: Photoframe / Calendar
   icon: mdi:image-multiple

@@ -188,3 +188,16 @@ weblink:
 
 homekit:
   pincode: !secret homekit_pincode
+
+pilight:
+  host: 127.0.0.1
+  port: 5000
+  send_delay: 0.4
+  whitelist:  # optional
+    protocol:
+      - rc101
+    id:
+      - 127801
+      - 127784
+      - 127785
+      - 127912

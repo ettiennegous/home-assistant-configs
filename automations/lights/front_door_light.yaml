@@ -1,5 +1,6 @@
 alias: Front Door Light
 hide_entity: True
+initial_state: False
 trigger:
   - platform: state
     entity_id: input_select.garage_status_dropdown

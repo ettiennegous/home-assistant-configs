@@ -1,0 +1,15 @@
+alias: Rf Remote 3 Off
+hide_entity: True
+trigger:
+  platform: event
+  event_type: pilight_received
+  event_data:
+    protocol: rc101
+    id: 127784
+    uuid: 0000-b8-27-eb-60df5f   
+    state: 'off'
+    unit: 2
+    all:
+action:
+  - service: input_boolean.toggle
+    entity_id: input_boolean.rf_remote_3_off

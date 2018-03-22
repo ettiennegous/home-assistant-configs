@@ -1,0 +1,10 @@
+alias: Delay automations on restart
+hide_entity: True
+trigger:
+  platform: homeassistant
+  event: start
+action:
+  - delay:
+      seconds: 20
+  - service: automation.turn_on
+    entity_id: automation.front_door_light, automation.garage_light

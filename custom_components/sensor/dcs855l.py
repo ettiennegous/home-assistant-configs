@@ -74,7 +74,7 @@ class DCS855LSensor(Entity):
 
     def update(self):
         try:
-            result = requests.get(self.url, auth=(self.username, self.password), timeout=10).text
+            result = requests.get(self.url, auth=(self.username, self.password), timeout=20).text
             _LOGGER.info("DCS855L  results were %s", result)
             m = re.search('tpC=(.*)', result)
             if m:

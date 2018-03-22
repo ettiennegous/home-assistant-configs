@@ -26,41 +26,41 @@ fan.ceiling_fan:
   homebridge_visible: true
   homebridge_name: Ceiling Fan
 
-device_tracker.ettiennes_iphone:
+device_tracker.ett_iphone:
   friendly_name: Ettienne
 
 device_tracker.kkramers_iphone:
   friendly_name: Kelly
 
 switch.lucy_switch:
-  friendly_name: Coffee Machine
+  friendly_name: Foyer Standing Light
   homebridge_switch_type: outlet
   homebridge_visible: true
-  homebridge_name: Coffee Machine
-  icon: mdi:coffee
+  homebridge_name: Foyer Standing Light
+  icon: mdi:light
 
 script.spotify_music:
   friendly_name: 'Play'
   icon: mdi:play
 
 light.charlie_dimmable_13:
-  friendly_name: 'Standing Light'
+  friendly_name: Alex Standing Light
   homebridge_visible: true
-  homebridge_name: Standing Light
+  homebridge_name: Alex Standing Light
   icon: mdi:ceiling-light
 
 sensor.living_room_temp_sensor_8:
-  friendly_name: 'Temperature'
+  friendly_name: Temperature
   homebridge_visible: true
   homebridge_name: Living Room Temp
 
 sensor.living_room_light_sensor_9:
-  friendly_name: 'Light'
+  friendly_name: Light
   homebridge_visible: true
   homebridge_name: Living Lux
 
 binary_sensor.living_room_sliding_door_sensor_11:
-  friendly_name: 'Door Open'
+  friendly_name: Door Open
   icon: mdi:lock-open
   homebridge_visible: true
   homebridge_name: Living Sliding Door
@@ -72,7 +72,7 @@ binary_sensor.living_room_motion_sensor_7:
   homebridge_name: Living Room Motion
 
 sensor.living_room_humidity_sensor_10:
-  friendly_name: 'Humidity'
+  friendly_name: Humidity
   icon: mdi:water-percent
   homebridge_visible: true
   homebridge_name: Living Room Humidity
