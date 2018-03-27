@@ -1,10 +1,10 @@
-alias: Foyer Motion Light
+alias: Front Door Light Garage
 hide_entity: True
+initial_state: False
 trigger:
-  platform: state
-  entity_id: binary_sensor.foyer_motion_sensor_14
-  from: 'off'
-  to: 'on'
+  - platform: state
+    entity_id: input_select.garage_status_dropdown
+    to: 'Door Open'
 condition:
   condition: and
   conditions: 
@@ -15,4 +15,4 @@ condition:
       entity_id: input_boolean.auto_lights
       state: 'on'   
 action:
-  - service: script.foyer_motion_light_dimmer2_on
+  - service: script.front_door_light_on

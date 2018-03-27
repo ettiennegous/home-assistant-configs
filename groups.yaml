@@ -106,7 +106,6 @@ EntranceHallAndKitchen:
   entities:
     - input_boolean.photo_frame
     - switch.lucy_switch
-    - light.charlie_dimmable_13
     - switch.foyer_light_29
     - binary_sensor.kitchen_motion_sensor
 
@@ -121,6 +120,8 @@ RubysRoom:
 RubySwitches:
   name: Switches
   entities:
+    - light.charlie_dimmable_13
+    - input_number.alex_standing_light_brightness
     - switch.snoopy_switch
     - sensor.ruby_room_temp
     - light.ruby_night_light

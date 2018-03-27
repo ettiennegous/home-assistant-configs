@@ -1,0 +1,10 @@
+alias: Standing Light Brighter
+hide_entity: True
+trigger:
+  - platform: state
+    entity_id: input_boolean.rf_remote_1_on
+action:
+  - service: light.turn_on
+    entity_id: light.charlie_dimmable_13
+    data_template:
+      brightness: "{{ states('input_number.alex_standing_light_brightness')| int }}"

@@ -1,0 +1,8 @@
+alias: Standing Light Dimmer
+hide_entity: True
+trigger:
+  - platform: state
+    entity_id: input_boolean.rf_remote_1_off
+action:
+  - service: light.turn_off
+    entity_id: light.charlie_dimmable_13

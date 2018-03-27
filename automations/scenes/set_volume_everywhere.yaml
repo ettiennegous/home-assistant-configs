@@ -6,4 +6,4 @@ action:
     service: media_player.volume_set
     data_template:
       entity_id: media_player.everywhere
-      volume_level: '{{ states.input_number.announcements_volume }}'
+      volume_level: "{{ states('input_number.announcements_volume')| float }}"

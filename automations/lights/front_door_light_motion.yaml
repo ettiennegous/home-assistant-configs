@@ -1,10 +1,7 @@
-alias: Front Door Light
+alias: Front Door Light Motion
 hide_entity: True
 initial_state: False
 trigger:
-  - platform: state
-    entity_id: input_select.garage_status_dropdown
-    to: 'Door Open'
   - platform: state
     entity_id: binary_sensor.outside_motion_sensor_18
     from: 'off'
@@ -19,4 +16,4 @@ condition:
       entity_id: input_boolean.auto_lights
       state: 'on'   
 action:
-  - service: script.front_door_light_on
+  - service: script.foyer_motion_light_standing_on
