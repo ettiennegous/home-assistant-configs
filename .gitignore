@@ -10,3 +10,7 @@ known_devices.old*
 **__pycache__**
 entity_registry.yaml
 live.txt
+OZW_Log.txt
+pyozw.sqlite
+*.db-*
+*.yaml.save

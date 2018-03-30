@@ -2,7 +2,7 @@ alias: Living Room Linked Dimmers Off
 hide_entity: True
 trigger:
   - platform: state
-    entity_id: light.living_dimmer_1_27
+    entity_id: light.living_dimmer_1_level
     from: 'on'
     to: 'off'
 condition:
@@ -14,4 +14,4 @@ condition:
 action:
   - service: light.turn_off
     data: 
-      entity_id: light.living_dimmer_2_28
+      entity_id: light.living_dimmer_2_level

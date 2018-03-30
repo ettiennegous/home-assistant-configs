@@ -15,7 +15,7 @@ Garage:
   view: yes
   icon: mdi:garage-open
   entities:
-    - switch.garage_light_26
+    - switch.garage_light_switch
     - group.GarageSensors 
 
 LivingRoom:
@@ -33,8 +33,8 @@ LivingRoom:
 LivingRoomLights:
   name: Living Room Lights
   entities:
-    - light.living_dimmer_1_27
-    - light.living_dimmer_2_28
+    - light.living_dimmer_1_level
+    - light.living_dimmer_2_level
     - input_boolean.fan_light
 
 LivingRoomAV:
@@ -106,7 +106,7 @@ EntranceHallAndKitchen:
   entities:
     - input_boolean.photo_frame
     - switch.lucy_switch
-    - switch.foyer_light_29
+    - switch.foyer_light_switch
     - binary_sensor.kitchen_motion_sensor
 
 RubysRoom:
@@ -196,6 +196,10 @@ VariousSensors:
     - input_boolean.rf_remote_4_off
     - input_boolean.rf_remote_all_on
     - input_boolean.rf_remote_all_off
+    - binary_sensor.snoopy_motion_sensor
+    - sensor.snoopy_temp_sensor
+    - sensor.snoopy_light_sensor
+    - sensor.snoopy_humidity_sensor
 # Climate: 
 #   entities:
 #     - sensor.bom_weather_air_temp_c

@@ -65,47 +65,47 @@ foyer_motion_light_dimmer2_on:
   alias: Foyer Motion Light Dimmer2 On
   sequence:
     - condition: state
-      entity_id: light.living_dimmer_2_28
+      entity_id: light.living_dimmer_2_level
       state: 'off'
     - service: light.turn_on
       data: 
-        entity_id: light.living_dimmer_2_28
+        entity_id: light.living_dimmer_2_level
         brightness: 40 # 0 to 255
     - delay:
         minutes: 2
     - service: light.turn_off
       data:
-        entity_id: light.living_dimmer_2_28
+        entity_id: light.living_dimmer_2_level
 
 garage_light_on:
   alias: Garage Light On
   sequence:
     - condition: state
-      entity_id: switch.garage_light_26
+      entity_id: switch.garage_light_switch
       state: 'off'
     - service: switch.turn_on
       data: 
-        entity_id: switch.garage_light_26
+        entity_id: switch.garage_light_switch
     - delay:
         minutes: 2
     - service: switch.turn_off
       data:
-        entity_id: switch.garage_light_26
+        entity_id: switch.garage_light_switch
 
 front_door_light_on:
   alias: Front Door Light On
   sequence:
     - condition: state
-      entity_id: switch.foyer_light_29
+      entity_id: switch.foyer_light_switch
       state: 'off'
     - service: switch.turn_on
       data: 
-        entity_id: switch.foyer_light_29
+        entity_id: switch.foyer_light_switch
     - delay:
         minutes: 3
     - service: switch.turn_off
       data:
-        entity_id: switch.foyer_light_29
+        entity_id: switch.foyer_light_switch
 
 ruby_light_show:
   alias: Ruby Light Show
