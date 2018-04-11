@@ -2,14 +2,14 @@ alias: Doorbell
 hide_entity: True
 trigger: 
   platform: state
-  entity_id: binary_sensor.outside_motion_sensor_18
+  entity_id: binary_sensor.multisensor_outside_front_door_motion
   from: 'off'
   to: 'on'
 condition:
   condition: and
   conditions:
     - condition: state
-      entity_id: binary_sensor.front_door_sensor_6
+      entity_id: binary_sensor.front_door_sensor
       state: 'off'
     - condition: state
       entity_id: input_boolean.doorbell

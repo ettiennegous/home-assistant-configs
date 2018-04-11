@@ -56,11 +56,7 @@ LivingRoomFan:
 LivingRoomSensors:
   name: Living Room Sensors
   entities:
-    - sensor.living_room_temp_sensor_8
-    - sensor.living_room_light_sensor_9
-    - binary_sensor.living_room_sliding_door_sensor_11
-    - binary_sensor.living_room_motion_sensor_7
-    - sensor.living_room_humidity_sensor_10
+    - binary_sensor.living_room_door_sensor
     - binary_sensor.living_room_motion_sensor
     - sensor.living_room_light_sensor
 
@@ -78,26 +74,26 @@ Kitchen:
 FoyerSensors:
   name: Foyer Sensors
   entities:
-    - sensor.foyer_temp_sensor_15
-    - sensor.foyer_light_sensor_16
-    - binary_sensor.foyer_motion_sensor_14
-    - sensor.foyer_humidity_sensor_17
+    - sensor.multisensor_foyer_temp
+    - sensor.multisensor_foyer_lux
+    - binary_sensor.multisensor_foyer_motion
+    - sensor.multisensor_foyer_humidity
 
 InDoorMotionSensors:
   name: Indoor Motion Sensors
   entities:
-    - binary_sensor.foyer_motion_sensor_14
+    - binary_sensor.multisensor_foyer_motion
     - binary_sensor.kitchen_motion_sensor
     - binary_sensor.living_room_motion_sensor
 
 FrontDoorSensors:
   name: Front Door / Outside Sensors
   entities:
-    - binary_sensor.front_door_sensor_6
-    - sensor.outside_temp_sensor_19
-    - sensor.outside_light_sensor_20
-    - binary_sensor.outside_motion_sensor_18
-    - sensor.outside_humidity_sensor_21
+    - binary_sensor.front_door_sensor
+    - sensor.multisensor_outside_front_door_temp
+    - sensor.multisensor_outside_front_door_lux
+    - binary_sensor.multisensor_outside_front_door_motion
+    - sensor.multisensor_outside_front_door_humidity
 
 EntranceHallAndKitchen:
   name: Switches
@@ -105,8 +101,8 @@ EntranceHallAndKitchen:
   icon: mdi:dip-switch
   entities:
     - input_boolean.photo_frame
-    - switch.lucy_switch
     - switch.foyer_light_switch
+    - light.stand_lamp_dimmer_2_level
     - binary_sensor.kitchen_motion_sensor
 
 RubysRoom:
@@ -120,7 +116,7 @@ RubysRoom:
 RubySwitches:
   name: Switches
   entities:
-    - light.charlie_dimmable_13
+    - light.stand_lamp_dimmer_1_level
     - input_number.alex_standing_light_brightness
     - switch.snoopy_switch
     - sensor.ruby_room_temp
@@ -157,14 +153,14 @@ Family:
   entities:
     - input_select.home_status_dropdown
     - group.InDoorMotionSensors
-    - device_tracker.ett_iphone
+    - device_tracker.ettiennes_iphone
     - device_tracker.kkramers_iphone    
     - sensor.time_to_home
     - sensor.time_to_work
 
 PhoneTrackers: 
   entities:
-    - device_tracker.ett_iphone
+    - device_tracker.ettiennes_iphone
     - device_tracker.kkramers_iphone    
 
 Miscelanious: 
@@ -179,11 +175,11 @@ Miscelanious:
 VariousSensors:
   name: Various Sensors
   entities:
-    - sensor.ram_used
-    - sensor.average_load_1m
-    - sensor.average_load_5m
-    - sensor.average_load_15m
-    - sensor.disk_used_home
+    - sensor.memory_use_percent
+    - sensor.load_1m
+    - sensor.load_5m
+    - sensor.load_15m
+    - sensor.disk_use_percent_home
     - sensor.ssl_certificate_expiry
     - script.light_loop_off
     - input_boolean.rf_remote_1_on
@@ -227,13 +223,15 @@ MusicSpotify:
   - input_select.spotify_source
   - script.spotify_music
   - input_number.spotify_volume
+  - media_player.mpd
 
 AlarmSensors:
   entities:
-  - binary_sensor.front_door_sensor_6
-  - binary_sensor.foyer_motion_sensor_14
-  - binary_sensor.living_room_motion_sensor_7
-  - binary_sensor.living_room_sliding_door_sensor_11
+  - binary_sensor.front_door_sensor
+  - binary_sensor.multisensor_foyer_motion
+  - binary_sensor.living_room_motion_sensor
+  - binary_sensor.living_room_door_sensor
+  - binary_sensor.kitchen_motion_sensor
 
 WebLinks:
   name: Links

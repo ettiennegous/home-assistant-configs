@@ -52,7 +52,7 @@ tts:
   - platform: google
 # Cloud
 cloud:
-#ios:
+ios:
 notify:
   - name: All_iOS_Devices
     platform: group
@@ -73,9 +73,6 @@ duckdns:
 input_boolean: !include configuration/input_boolean.yaml
 media_player: !include configuration/media_player.yaml
 switch: !include configuration/switch.yaml
-
-vera:
-  vera_controller_url: !secret vera_vera_controller_url
 
 zwave:
   usb_path: /dev/ttyACM0

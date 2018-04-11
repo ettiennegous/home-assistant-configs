@@ -26,56 +26,38 @@ fan.ceiling_fan:
   homebridge_visible: true
   homebridge_name: Ceiling Fan
 
-device_tracker.ett_iphone:
+device_tracker.ettiennes_iphone:
   friendly_name: Ettienne
 
 device_tracker.kkramers_iphone:
   friendly_name: Kelly
 
 switch.lucy_switch:
-  friendly_name: Foyer Standing Light
-  homebridge_switch_type: outlet
-  homebridge_visible: true
-  homebridge_name: Foyer Standing Light
-  icon: mdi:light
+  friendly_name: Coffee Machine
+  icon: mdi:coffee
 
 script.spotify_music:
   friendly_name: 'Play'
   icon: mdi:play
 
-light.charlie_dimmable_13:
+light.stand_lamp_dimmer_1_level:
   friendly_name: Alex Standing Light
   homebridge_visible: true
   homebridge_name: Alex Standing Light
   icon: mdi:ceiling-light
 
-sensor.living_room_temp_sensor_8:
-  friendly_name: Temperature
+light.stand_lamp_dimmer_2_level:
+  friendly_name: Foyer Standing Light
   homebridge_visible: true
-  homebridge_name: Living Room Temp
+  homebridge_name: Foyer Standing Light
+  icon: mdi:ceiling-light
 
-sensor.living_room_light_sensor_9:
-  friendly_name: Light
-  homebridge_visible: true
-  homebridge_name: Living Lux
 
-binary_sensor.living_room_sliding_door_sensor_11:
+binary_sensor.living_room_door_sensor:
   friendly_name: Door Open
   icon: mdi:lock-open
   homebridge_visible: true
   homebridge_name: Living Sliding Door
-
-binary_sensor.living_room_motion_sensor_7:
-  friendly_name: 'Motion'
-  icon: mdi:cursor-move
-  homebridge_visible: true
-  homebridge_name: Living Room Motion
-
-sensor.living_room_humidity_sensor_10:
-  friendly_name: Humidity
-  icon: mdi:water-percent
-  homebridge_visible: true
-  homebridge_name: Living Room Humidity
 
 input_boolean.bedtime_scene:
   homebridge_visible: true
@@ -102,3 +84,21 @@ script.onkyo_volume_up:
 
 script.onkyo_volume_down:
   icon: mdi:volume-minus
+
+sensor.sn1_temperature:
+  friendly_name: Temperature
+
+sensor.sn1_humidity:
+  friendly_name: Humidity
+
+sensor.sn1_ldr:
+  friendly_name: Lux
+
+light.sn1_led: 
+  friendly_name: RGB LED
+
+sensor.sn1_distance: 
+  friendly_name: Distance
+
+input_select.garage_status_dropdown:
+  friendly_name: Garage Status

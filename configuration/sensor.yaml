@@ -90,11 +90,11 @@
 - platform: google_travel_time
   name: "Time to home"
   api_key: !secret google_assistant_api_key
-  origin: device_tracker.ett_iphone
+  origin: device_tracker.ettiennes_iphone
   destination: !secret home_address
 
 - platform: google_travel_time
   name: "Time to work"
   api_key: !secret google_assistant_api_key
-  origin: device_tracker.ett_iphone
+  origin: device_tracker.ettiennes_iphone
   destination: !secret work_address

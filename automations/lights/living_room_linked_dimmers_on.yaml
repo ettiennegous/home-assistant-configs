@@ -15,4 +15,9 @@ action:
   - service: light.turn_on
     data_template: 
       entity_id: light.living_dimmer_2_level
-      brightness: "{{ states.light.living_dimmer_1_level.attributes.brightness }}"
+  - service: light.turn_on
+    data_template: 
+      entity_id: light.living_dimmer_2_level
+      brightness: "{{states.light.living_dimmer_1_level.attributes.brightness |int}}"
+
+      

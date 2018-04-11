@@ -5,11 +5,14 @@ trigger:
   - platform: state
     entity_id: input_select.garage_status_dropdown
     to: 'Door Open'
+  - platform: state
+    entity_id: binary_sensor.front_door_sensor
+    to: 'on'
 condition:
   condition: and
   conditions: 
     - condition: numeric_state
-      entity_id: sensor.outside_light_sensor_20
+      entity_id: sensor.multisensor_outside_front_door_lux
       below: 51
     - condition: state
       entity_id: input_boolean.auto_lights

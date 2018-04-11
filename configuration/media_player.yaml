@@ -17,3 +17,6 @@
 - platform: cast
   name: Kitchen Speaker
   host: !secret kitchen_speaker_host
+- platform: mpd
+  name: MPD
+  host: 127.0.0.1

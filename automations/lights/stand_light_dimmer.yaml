@@ -5,4 +5,4 @@ trigger:
     entity_id: input_boolean.rf_remote_1_off
 action:
   - service: light.turn_off
-    entity_id: light.charlie_dimmable_13
+    entity_id: light.stand_lamp_dimmer_1_level

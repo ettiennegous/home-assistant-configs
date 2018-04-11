@@ -1,0 +1,8 @@
+alias: MPD Icecast Chromecast
+trigger:
+  platform: state
+  entity_id: media_player.mpd
+  to: 'playing'
+action:
+  - service: script.turn_on
+    entity_id: script.stream_mopidy_to_cc

@@ -9,5 +9,5 @@
 #   verify_ssl: false
 # - platform: ping
 #   hosts:
-#     ett_iphone: !secret ettienne_iphone_ip
+#     ettiennes_iphone: !secret ettienne_iphone_ip
 #     kkramers_iphone: !secret kelly_iphone_ip

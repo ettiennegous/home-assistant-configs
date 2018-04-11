@@ -3,13 +3,13 @@ light_flash:
   sequence:
     - service: light.turn_on
       data: 
-        entity_id: light.charlie_dimmable_13
+        entity_id: light.stand_lamp_dimmer_1_level
         brightness: 40 # 0 to 255
     - delay:
         seconds: 1
     - service: light.turn_off
       data:
-        entity_id: light.charlie_dimmable_13
+        entity_id: light.stand_lamp_dimmer_1_level
     - service: script.turn_on
       data:
         entity_id: script.light_loop_on
@@ -47,20 +47,6 @@ onkyo_volume_down:
   sequence:
     - service: shell_command.onkyo_volume_down
 
-foyer_motion_light_standing_on:
-  alias: Foyer Motion Light Standing On
-  sequence:
-    - condition: state
-      entity_id: switch.lucy_switch
-      state: 'off'
-    - service: switch.turn_on
-      entity_id: switch.lucy_switch
-    - delay:
-        minutes: 2
-    - service: switch.turn_off
-      data:
-        entity_id: switch.lucy_switch
-
 foyer_motion_light_dimmer2_on:
   alias: Foyer Motion Light Dimmer2 On
   sequence:
@@ -72,10 +58,37 @@ foyer_motion_light_dimmer2_on:
         entity_id: light.living_dimmer_2_level
         brightness: 40 # 0 to 255
     - delay:
-        minutes: 2
+        minutes: 3
     - service: light.turn_off
-      data:
-        entity_id: light.living_dimmer_2_level
+      entity_id: light.living_dimmer_2_level
+
+foyer_motion_standing_lamp_dimmer2_on:
+  alias: Foyer Motion Light Dimmer2 On
+  sequence:
+    - condition: state
+      entity_id: light.stand_lamp_dimmer_2_level
+      state: 'off'
+    - service: light.turn_on
+      data: 
+        entity_id: light.stand_lamp_dimmer_2_level
+        brightness: 40 # 0 to 255
+    - delay:
+        minutes: 3
+    - service: light.turn_off
+      entity_id: light.stand_lamp_dimmer_2_level
+
+foyer_motion_fan_light_on:
+  alias: Foyer Motion Fan Light On
+  sequence:
+    - condition: state
+      entity_id: input_boolean.fan_light
+      state: 'off'
+    - service: input_boolean.turn_on
+      entity_id: input_boolean.fan_light
+    - delay:
+        minutes: 3
+    - service: input_boolean.turn_off
+      entity_id: light.fan_light
 
 garage_light_on:
   alias: Garage Light On
@@ -84,13 +97,11 @@ garage_light_on:
       entity_id: switch.garage_light_switch
       state: 'off'
     - service: switch.turn_on
-      data: 
-        entity_id: switch.garage_light_switch
+      entity_id: switch.garage_light_switch
     - delay:
         minutes: 2
     - service: switch.turn_off
-      data:
-        entity_id: switch.garage_light_switch
+      entity_id: switch.garage_light_switch
 
 front_door_light_on:
   alias: Front Door Light On
@@ -99,13 +110,11 @@ front_door_light_on:
       entity_id: switch.foyer_light_switch
       state: 'off'
     - service: switch.turn_on
-      data: 
-        entity_id: switch.foyer_light_switch
+      entity_id: switch.foyer_light_switch
     - delay:
         minutes: 3
     - service: switch.turn_off
-      data:
-        entity_id: switch.foyer_light_switch
+      entity_id: switch.foyer_light_switch
 
 ruby_light_show:
   alias: Ruby Light Show
@@ -126,3 +135,24 @@ ruby_light_show_loop_on:
         seconds: 10
     - service: script.turn_on
       entity_id: script.ruby_light_show
+
+stream_mopidy_to_cc:
+  alias: Start streaming MPD to Chromecast
+  sequence:
+    - service: media_player.media_play
+      data:
+        entity_id: media_player.living_room_speaker
+        media_content_id: 'http://192.168.1.24:8000/mopidy'
+        media_content_type: 'music'
+
+activate_playlist:
+  alias: Start playing a playlist
+  sequence:
+    - service: media_player.select_source
+      data:
+        entity_id: media_player.mpd
+        source: 'Pandora Playlist'
+    - service: media_player.media_play_pause
+      data:
+        entity_id: media_player.mpd
+        shuffle: true
