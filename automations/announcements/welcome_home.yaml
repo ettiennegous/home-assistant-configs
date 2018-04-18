@@ -6,6 +6,11 @@ trigger:
   to: 'home'
   for:
     minutes: 0
+condition:
+  condition: and
+  conditions: 
+    - condition: template
+      value_template: "{{states('input_select.home_status_dropdown') != 'Sleeping'}}"
 action:
   - service: media_player.volume_set
     data:

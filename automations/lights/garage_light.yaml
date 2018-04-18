@@ -13,6 +13,6 @@ condition:
       below: 51
     - condition: state
       entity_id: input_boolean.auto_lights
-      state: 'on'   
+      state: 'on'
 action:
   - service: script.garage_light_on

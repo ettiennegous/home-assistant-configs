@@ -192,6 +192,14 @@ VariousSensors:
     - input_boolean.rf_remote_4_off
     - input_boolean.rf_remote_all_on
     - input_boolean.rf_remote_all_off
+    - input_boolean.rf_remote_2_a
+    - input_boolean.rf_remote_2_b
+    - input_boolean.rf_remote_2_c
+    - input_boolean.rf_remote_2_d
+    - input_boolean.rf_remote_3_a
+    - input_boolean.rf_remote_3_b
+    - input_boolean.rf_remote_3_c
+    - input_boolean.rf_remote_3_d
     - binary_sensor.snoopy_motion_sensor
     - sensor.snoopy_temp_sensor
     - sensor.snoopy_light_sensor

@@ -39,18 +39,41 @@ rf_remote_all_on:
 rf_remote_all_off:
   name: Rf Remote All Off
   icon: mdi:remote
-  
+
+rf_remote_2_a:
+  name: Rf Remote 2 A
+  icon: mdi:remote
+rf_remote_2_b:
+  name: Rf Remote 2 B
+  icon: mdi:remote
+rf_remote_2_c:
+  name: Rf Remote 2 C
+  icon: mdi:remote
+rf_remote_2_d:
+  name: Rf Remote 2 D
+  icon: mdi:remote
+
+rf_remote_3_a:
+  name: Rf Remote 3 A
+  icon: mdi:remote
+rf_remote_3_b:
+  name: Rf Remote 3 B
+  icon: mdi:remote
+rf_remote_3_c:
+  name: Rf Remote 3 C
+  icon: mdi:remote
+rf_remote_3_d:
+  name: Rf Remote 3 D
+  icon: mdi:remote
+
 bedtime_scene:
   name: Ett Bedtime 
   icon: mdi:login
-  initial: off
 ruby_bathtime:
   name: Ruby Bathtime
-  initial: off
   icon: mdi:skull
 ruby_bedtime:
   name: Ruby Bedtime
-  initial: off
   icon: mdi:weather-night
 morning_scene:
   name: Morning Routine
@@ -61,4 +84,3 @@ photo_frame:
 auto_lights: 
   name: Auto Lights
   icon: mdi:lightbulb-on-outline
-  initial: on

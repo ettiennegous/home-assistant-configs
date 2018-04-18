@@ -1,4 +1,7 @@
 - platform: owntracks_http
+#- platform: bluetooth_tracker
+#  interval_seconds: 20
+#  track_new_devices: yes
 # - platform: tomato
 #   host: !secret tomato_host
 #   username: !secret tomato_username

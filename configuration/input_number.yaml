@@ -10,7 +10,6 @@ announcements_volume:
   min: 0
   max: 1
   step: 0.05
-  initial: 0.4
 alex_standing_light_brightness:
   name: Alex Light Brightness
   icon: mdi:theme-light-dark
