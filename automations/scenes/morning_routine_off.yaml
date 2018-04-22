@@ -1,8 +1,8 @@
 alias: Morning Routine Scene Off
 hide_entity: True
 trigger:
-  platform: state
-  entity_id: input_boolean.morning_scene
-  from: 'on'
-  to: 'off'
+  - platform: state
+    entity_id: input_boolean.morning_scene
+    from: 'on'
+    to: 'off'
 action:

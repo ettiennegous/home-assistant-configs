@@ -13,6 +13,8 @@ condition:
       below: 51
     - condition: state
       entity_id: input_boolean.auto_lights
-      state: 'on'   
+      state: 'on'
+    - condition: template
+      value_template: "{{states('input_select.home_status_dropdown') == 'Sleeping'}}"
 action:
   - service: script.foyer_motion_standing_lamp_dimmer2_on

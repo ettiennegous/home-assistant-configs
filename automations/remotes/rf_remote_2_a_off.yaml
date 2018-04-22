@@ -1,0 +1,10 @@
+alias: RF Remote 2 A Off
+hide_entity: True
+trigger:
+  platform: state
+  entity_id: input_boolean.rf_remote_2_a
+  from: 'on'
+  to: 'off'
+action:
+  - service: input_boolean.turn_off
+    entity_id: input_boolean.bedtime_scene

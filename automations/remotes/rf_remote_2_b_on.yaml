@@ -1,0 +1,10 @@
+alias: Remote 2 B On
+hide_entity: True
+trigger:
+  platform: state
+  entity_id: input_boolean.rf_remote_2_b
+  from: 'off'
+  to: 'on'
+action:
+  - service: input_boolean.turn_on
+    entity_id: input_boolean.morning_scene
