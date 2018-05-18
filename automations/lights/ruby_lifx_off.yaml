@@ -1,0 +1,11 @@
+alias: Ruby Lifx Off
+hide_entity: True
+trigger:
+  platform: state
+  entity_id: input_boolean.rf_remote_1_off
+condition:
+action:
+  - service: light.lifx_set_state
+    data: 
+      entity_id: light.lifx_ruby_room
+      power: False

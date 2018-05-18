@@ -1,8 +1,8 @@
-alias: Standing Light Brighter
+alias: Alex Standing Light On
 hide_entity: True
 trigger:
   - platform: state
-    entity_id: input_boolean.rf_remote_1_on
+    entity_id: input_boolean.rf_remote_3_a
 action:
   - service: light.turn_on
     entity_id: light.stand_lamp_dimmer_1_level

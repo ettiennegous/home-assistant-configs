@@ -98,3 +98,46 @@
   api_key: !secret google_assistant_api_key
   origin: device_tracker.ettiennes_iphone
   destination: !secret work_address
+
+- platform: template
+  sensors:
+    battery_front_door_sensor:
+      friendly_name: Front Door Sensor Battery
+      unit_of_measurement: '%'
+      #device_class: battery
+      value_template: >-
+          {%- if states.zwave.front_door_sensor.attributes.battery_level %}
+              {{ states.zwave.front_door_sensor.attributes.battery_level|round }}
+          {% else %}
+              {{ states.sensor.battery_front_door_sensor.state }}
+          {%- endif %}
+    battery_living_room_door_sensor:
+      friendly_name: Living Room Door Sensor Battery
+      unit_of_measurement: '%'
+      #device_class: battery
+      value_template: >-
+          {%- if states.zwave.living_room_door_sensor.attributes.battery_level %}
+              {{ states.zwave.living_room_door_sensor.attributes.battery_level|round }}
+          {% else %}
+              {{ states.sensor.battery_living_room_door_sensor.state }}
+          {%- endif %}
+    battery_foyer_multisensor:
+      friendly_name: Foyer Multisensor Battery
+      unit_of_measurement: '%'
+      #device_class: battery
+      value_template: >-
+          {%- if states.zwave.multisensor_foyer.attributes.battery_level %}
+              {{ states.zwave.multisensor_foyer.attributes.battery_level|round }}
+          {% else %}
+              {{ states.sensor.battery_foyer_multisensor.state }}
+          {%- endif %}
+    battery_outside_front_door_multisensor:
+      friendly_name: Outside Front Door Multisensor Battery
+      unit_of_measurement: '%'
+      #device_class: battery
+      value_template: >-
+          {%- if states.zwave.multisensor_outside_front_door.attributes.battery_level %}
+              {{ states.zwave.multisensor_outside_front_door.attributes.battery_level|round }}
+          {% else %}
+              {{ states.sensor.battery_outside_front_door_multisensor.state }}
+          {%- endif %}

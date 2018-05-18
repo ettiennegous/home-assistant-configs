@@ -5,6 +5,7 @@ default_view:
     - group.SceneTriggers
     - group.Speakers
     - group.Family
+    - group.Study
     - group.Miscelanious
     - group.MusicSpotify
     - group.WebLinks
@@ -118,6 +119,7 @@ RubySwitches:
   entities:
     - light.stand_lamp_dimmer_1_level
     - input_number.alex_standing_light_brightness
+    - light.lifx_ruby_room
     - switch.snoopy_switch
     - sensor.ruby_room_temp
     - light.ruby_night_light
@@ -163,6 +165,12 @@ PhoneTrackers:
     - device_tracker.ettiennes_iphone
     - device_tracker.kkramers_iphone    
 
+Study:
+  view: yes
+  icon: mdi:gamepad-variant
+  entities: 
+    - light.lifx_study
+
 Miscelanious: 
   view: yes
   icon: mdi:comment-question-outline
@@ -170,7 +178,15 @@ Miscelanious:
     - group.VariousSensors
     - group.InternetSpeedGroup
     - group.iDevices
+    - group.BatteryLevels
     # - group.Climate
+
+BatteryLevels:
+  entities:
+    - sensor.battery_front_door_sensor
+    - sensor.battery_living_room_door_sensor
+    - sensor.battery_foyer_multisensor
+    - sensor.battery_outside_front_door_multisensor
 
 VariousSensors:
   name: Various Sensors
@@ -182,6 +198,7 @@ VariousSensors:
     - sensor.disk_use_percent_home
     - sensor.ssl_certificate_expiry
     - script.light_loop_off
+    - script.delayed_automations_activate
     - input_boolean.rf_remote_1_on
     - input_boolean.rf_remote_1_off
     - input_boolean.rf_remote_2_on
@@ -209,6 +226,8 @@ VariousSensors:
 #     - sensor.bom_weather_air_temp_c
 #     - sensor.bom_weather_rain_today
 #     - sensor.bom_weather_relative_humidity
+
+
 
 SceneTriggers: 
   name: Scene Triggers

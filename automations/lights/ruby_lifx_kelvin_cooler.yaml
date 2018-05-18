@@ -1,0 +1,17 @@
+alias: Ruby Lifx Kelvin Cooler
+hide_entity: True
+trigger:
+  platform: state
+  entity_id: input_boolean.rf_remote_3_off
+condition:
+action:
+  - service: light.lifx_set_state
+    data_template:
+      entity_id: light.lifx_ruby_room
+      color_temp: >
+        {% set n = states.light.lifx_ruby_room.attributes.color_temp - 90 %}
+        {% if n < 111 %}
+          111
+        {% else %}
+          {{ n }}
+        {% endif %}

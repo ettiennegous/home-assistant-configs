@@ -29,6 +29,12 @@ light_loop_off:
     - service: script.turn_off
       entity_id: script.light_loop_on
 
+delayed_automations_activate:
+  alias: Activate Delayed Automations
+  sequence:
+    - service: automation.turn_on
+      entity_id: automation.front_door_light_garage, automation.garage_light, automation.front_door_light_motion
+
 panasonic_tv_power:
   alias: Panasonic TV Power
   sequence:

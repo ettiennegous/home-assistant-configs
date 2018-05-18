@@ -8,6 +8,8 @@ trigger:
 action:
   - service: light.turn_off
     entity_id: light.stand_lamp_dimmer_2_level
+  - service: light.turn_off
+    entity_id: light.lifx_study
   - service: input_boolean.turn_off
     entity_id: input_boolean.fan_light
   - service: switch.turn_off

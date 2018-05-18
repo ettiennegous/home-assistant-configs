@@ -1,0 +1,18 @@
+alias: Ruby Lifx Brighter
+hide_entity: True
+trigger:
+  platform: state
+  entity_id: input_boolean.rf_remote_2_on
+condition:
+action:
+  - service: light.lifx_set_state
+    data_template:
+      entity_id: light.lifx_ruby_room
+      transition: 1
+      brightness: >
+        {% set n = states.light.lifx_ruby_room.attributes.brightness + 50 %}
+        {% if n > 255 %}
+          255
+        {% else %}
+          {{ n }}
+        {% endif %}

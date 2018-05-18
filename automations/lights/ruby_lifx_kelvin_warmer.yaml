@@ -1,0 +1,17 @@
+alias: Ruby Lifx Kelvin Warmer
+hide_entity: True
+trigger:
+  platform: state
+  entity_id: input_boolean.rf_remote_3_on
+condition:
+action:
+  - service: light.lifx_set_state
+    data_template:
+      entity_id: light.lifx_ruby_room
+      color_temp: >
+        {% set n = states.light.lifx_ruby_room.attributes.color_temp + 90 %}
+        {% if n > 400 %}
+          400
+        {% else %}
+          {{ n }}
+        {% endif %}

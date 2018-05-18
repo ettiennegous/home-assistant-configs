@@ -126,7 +126,7 @@ light:
     rgb: true  
     optimistic: false  
     qos: 0  
-
+  - platform: lifx
 
 shell_command: !include configuration/shell_command.yaml
 shopping_list:
@@ -174,8 +174,8 @@ google_assistant: !include configuration/google_assistant.yaml
 alarm_control_panel:
   - platform: manual
     name: Home Alarm
-    pending_time: 10
-    trigger_time: 10
+    pending_time: 30
+    trigger_time: 30
     disarm_after_trigger: false
 
 weblink:
