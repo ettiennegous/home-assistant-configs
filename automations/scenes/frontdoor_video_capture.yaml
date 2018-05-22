@@ -9,7 +9,7 @@ condition:
   condition: and
   conditions:
     - condition: state
-      entity_id: binary_sensor.front_door_sensor_sensor
+      entity_id: binary_sensor.front_door_sensor
       state: 'off'
 action:
   - service: shell_command.camera_capture_video
