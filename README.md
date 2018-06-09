@@ -11,6 +11,7 @@ All the configs for my home automation based on [home-assistant.io](https://home
 - Onkyo Amplifier
 - Two Aeotec Gen 5 Nano Dimmers
 - Two Aeotec Micro Switches
+- Two Aeotec Smart Sockets Gen 6 
 - Custom multi sensor for the garage that senses door and car status
 - Custom 8266 kids night light
 - Onboard Lux, PIR, IR RX/TX, RF 433mhz RX/TX on the raspberry pi

@@ -4,6 +4,14 @@ trigger:
   platform: homeassistant
   event: start
 action:
+  - service: device_tracker.see
+    data:
+      dev_id: ettiennes_iphone
+      location_name: 'home'
+  - service: device_tracker.see
+    data:
+      dev_id: kkramers_iphone
+      location_name: 'home'
   - delay:
       seconds: 20
   - service: automation.turn_on

@@ -46,6 +46,7 @@ LivingRoomAV:
     - script.onkyo_amp_power
     - script.onkyo_volume_up
     - script.onkyo_volume_down
+    - switch.zwave_switch_2_switch
 
 LivingRoomFan:
   name: Living Room Fan
@@ -101,6 +102,7 @@ EntranceHallAndKitchen:
   control: hidden
   icon: mdi:dip-switch
   entities:
+    - switch.zwave_switch_1_switch
     - input_boolean.photo_frame
     - switch.foyer_light_switch
     - light.stand_lamp_dimmer_2_level
@@ -179,6 +181,10 @@ Miscelanious:
     - group.InternetSpeedGroup
     - group.iDevices
     - group.BatteryLevels
+    - group.PowerConsumptionKWH
+    - group.PowerConsumptionWatts
+    - group.CurrentDrawAmps
+    - group.Voltages
     # - group.Climate
 
 BatteryLevels:
@@ -227,7 +233,49 @@ VariousSensors:
 #     - sensor.bom_weather_rain_today
 #     - sensor.bom_weather_relative_humidity
 
+PowerConsumptionKWH: 
+  name: Power Consumption KWH
+  entities:
+    - sensor.zwave_switch_1_energy
+    - sensor.zwave_switch_2_energy
+    - sensor.foyer_light_energy
+    - sensor.garage_light_energy
+    - sensor.living_dimmer_1_energy
+    - sensor.living_dimmer_2_energy
+    - sensor.stand_lamp_dimmer_1_energy
+    - sensor.stand_lamp_dimmer_2_energy
 
+PowerConsumptionWatts: 
+  name: Power Consumption Watts
+  entities:
+    - sensor.zwave_switch_1_power
+    - sensor.zwave_switch_2_power
+    - sensor.foyer_light_power
+    - sensor.garage_light_power
+    - sensor.living_dimmer_1_power
+    - sensor.living_dimmer_2_power
+    - sensor.stand_lamp_dimmer_1_power
+    - sensor.stand_lamp_dimmer_2_power
+
+CurrentDrawAmps: 
+  name: Current Draw Amps
+  entities:
+    - sensor.zwave_switch_1_current
+    - sensor.zwave_switch_2_current
+    - sensor.foyer_light_current
+    - sensor.garage_light_current
+    - sensor.living_dimmer_1_current
+    - sensor.living_dimmer_2_current
+
+Voltages: 
+  name: Voltages
+  entities:
+    - sensor.zwave_switch_1_voltage
+    - sensor.zwave_switch_2_voltage
+    - sensor.foyer_light_voltage
+    - sensor.garage_light_voltage
+    - sensor.living_dimmer_1_voltage
+    - sensor.living_dimmer_2_voltage
 
 SceneTriggers: 
   name: Scene Triggers
@@ -275,3 +323,4 @@ GarageSensors:
     - light.sn1_led
     - sensor.sn1_distance
     - input_select.garage_status_dropdown
+
