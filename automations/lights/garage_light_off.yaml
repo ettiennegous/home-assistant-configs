@@ -1,0 +1,22 @@
+alias: Garage Light Off
+hide_entity: True
+initial_state: False
+trigger:
+  - platform: state
+    entity_id: input_select.garage_status_dropdown
+    to: 'Door Closed Car'
+  - platform: state
+    entity_id: input_select.garage_status_dropdown
+    to: 'Door Closed No Car'
+condition:
+  condition: and
+  conditions: 
+    - condition: state
+      entity_id: input_boolean.auto_lights
+      state: 'on'
+    - condition: state
+      entity_id: switch.garage_light_switch
+      state: 'on'
+action:
+  - service: switch.turn_off
+    entity_id: switch.garage_light_switch

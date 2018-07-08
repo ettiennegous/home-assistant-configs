@@ -33,7 +33,7 @@ delayed_automations_activate:
   alias: Activate Delayed Automations
   sequence:
     - service: automation.turn_on
-      entity_id: automation.front_door_light_garage, automation.garage_light, automation.front_door_light_motion
+      entity_id: automation.front_door_light_garage, automation.garage_light_on, automation.garage_light_off, automation.front_door_light_motion
 
 panasonic_tv_power:
   alias: Panasonic TV Power
@@ -95,19 +95,6 @@ foyer_motion_fan_light_on:
         minutes: 3
     - service: input_boolean.turn_off
       entity_id: light.fan_light
-
-garage_light_on:
-  alias: Garage Light On
-  sequence:
-    - condition: state
-      entity_id: switch.garage_light_switch
-      state: 'off'
-    - service: switch.turn_on
-      entity_id: switch.garage_light_switch
-    - delay:
-        minutes: 2
-    - service: switch.turn_off
-      entity_id: switch.garage_light_switch
 
 front_door_light_on:
   alias: Front Door Light On

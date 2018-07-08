@@ -1,4 +1,4 @@
-alias: Garage Light
+alias: Garage Light On
 hide_entity: True
 initial_state: False
 trigger:
@@ -14,5 +14,10 @@ condition:
     - condition: state
       entity_id: input_boolean.auto_lights
       state: 'on'
+    - condition: state
+      entity_id: switch.garage_light_switch
+      state: 'off'
 action:
-  - service: script.garage_light_on
+  - service: switch.turn_on
+    entity_id: switch.garage_light_switch
+

@@ -15,4 +15,4 @@ action:
   - delay:
       seconds: 20
   - service: automation.turn_on
-    entity_id: automation.front_door_light_garage, automation.garage_light, automation.front_door_light_motion
+    entity_id: automation.front_door_light_garage, automation.garage_light_on, automation.garage_light_off , automation.front_door_light_motion

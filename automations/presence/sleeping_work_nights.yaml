@@ -1,0 +1,23 @@
+alias: Sleeping Work Nights
+hide_entity: True
+trigger:
+  platform: time
+  at: '21:30:00'
+condition:
+  condition: and
+  conditions: 
+    - condition: time
+      weekday:
+        - mon
+        - tue
+        - wed
+        - thu
+        - sun
+    - condition: state
+      entity_id: group.phonetrackers
+      state: 'home'
+action:
+  - service: input_select.select_option
+    data:
+      entity_id: input_select.home_status_dropdown
+      option: Sleeping
