@@ -9,17 +9,23 @@ exposed_domains:
   - group
   - input_boolean
 entity_config:
-  switch.lucy_switch:
+  switch.zwave_switch_1_switch:
     name: Coffee Machine
     aliases:
       - coffee machine
       - coffee
-  input_boolean.plug_1:
-    name: Ruby's Fan
+  light.living_dimmer_1_level:
+    name: Living Room Lights 1
     aliases:
-      - ruby fan
-      - fan ruby
-      - fan in ruby's room
+      - living room light
+      - living room lights
+      - lights
+  light.living_dimmer_2_level:
+    name: Living Room Lights 2
+    aliases:
+      - living room light 2
+      - living room lights 2
+      - lights 2
   fan.ceiling_fan:
     name: Living Room Fan
     aliases:

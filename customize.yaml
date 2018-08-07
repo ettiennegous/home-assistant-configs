@@ -32,7 +32,7 @@ device_tracker.ettiennes_iphone:
 device_tracker.kkramers_iphone:
   friendly_name: Kelly
 
-switch.lucy_switch:
+switch.zwave_switch_1_switch:
   friendly_name: Coffee Machine
   icon: mdi:coffee
 
