@@ -3,8 +3,8 @@ default_view:
   icon: mdi:home 
   entities:
     - group.SceneTriggers
-    - group.Speakers
     - group.Family
+    - group.Speakers
     - group.Study
     - group.Miscelanious
     - group.MusicSpotify
@@ -16,8 +16,7 @@ Garage:
   view: yes
   icon: mdi:garage-open
   entities:
-    - switch.garage_light_switch
-    - group.GarageSensors 
+    - group.GarageCard 
 
 LivingRoom:
   name: Living Room
@@ -68,10 +67,10 @@ Kitchen:
   icon: mdi:fridge
   entities:
     - group.EntranceHallAndKitchen
+    - camera.front_door_cam
     - group.FrontDoorSensors
     - group.FoyerSensors
     - media_player.kitchen_speaker
-    - camera.front_door_cam
 
 FoyerSensors:
   name: Foyer Sensors
@@ -108,16 +107,17 @@ EntranceHallAndKitchen:
     - light.stand_lamp_dimmer_2_level
     - binary_sensor.kitchen_motion_sensor
 
-RubysRoom:
-  name: Rubys Room
+KidsRooms:
+  name: Kids Rooms
   view: yes
   icon: mdi:heart
   entities:
     - camera.ruby_cam
-    - group.RubySwitches
+    - group.KidsRoomsCard
 
-RubySwitches:
-  name: Switches
+KidsRoomsCard:
+  name: Kids Rooms
+  control: hidden
   entities:
     - light.stand_lamp_dimmer_1_level
     - input_number.alex_standing_light_brightness
@@ -132,8 +132,14 @@ MainBedRoom:
   view: yes
   icon: mdi:hotel
   entities:
-    - switch.woodstock_switch
+    - group.MainBedRoomCard
+
+MainBedRoomCard:
+  name: Main Bedroom
+  control: hidden
+  entities:
     - switch.belle_switch
+    - switch.woodstock_switch
 
 iDevices:
   name: iDevices
@@ -185,6 +191,7 @@ Miscelanious:
     - group.PowerConsumptionWatts
     - group.CurrentDrawAmps
     - group.Voltages
+    - group.RfBoolToggles
     # - group.Climate
 
 BatteryLevels:
@@ -196,6 +203,7 @@ BatteryLevels:
 
 VariousSensors:
   name: Various Sensors
+  control: hidden
   entities:
     - sensor.memory_use_percent
     - sensor.load_1m
@@ -205,6 +213,20 @@ VariousSensors:
     - sensor.ssl_certificate_expiry
     - script.light_loop_off
     - script.delayed_automations_activate
+    - binary_sensor.snoopy_motion_sensor
+    - sensor.snoopy_temp_sensor
+    - sensor.snoopy_light_sensor
+    - sensor.snoopy_humidity_sensor
+# Climate: 
+#   entities:
+#     - sensor.bom_weather_air_temp_c
+#     - sensor.bom_weather_rain_today
+#     - sensor.bom_weather_relative_humidity
+
+RfBoolToggles:
+  name: RF Bool Toggles
+  control: hidden
+  entities: 
     - input_boolean.rf_remote_1_on
     - input_boolean.rf_remote_1_off
     - input_boolean.rf_remote_2_on
@@ -223,15 +245,6 @@ VariousSensors:
     - input_boolean.rf_remote_3_b
     - input_boolean.rf_remote_3_c
     - input_boolean.rf_remote_3_d
-    - binary_sensor.snoopy_motion_sensor
-    - sensor.snoopy_temp_sensor
-    - sensor.snoopy_light_sensor
-    - sensor.snoopy_humidity_sensor
-# Climate: 
-#   entities:
-#     - sensor.bom_weather_air_temp_c
-#     - sensor.bom_weather_rain_today
-#     - sensor.bom_weather_relative_humidity
 
 PowerConsumptionKWH: 
   name: Power Consumption KWH
@@ -314,13 +327,14 @@ WebLinks:
   - weblink.front_door_camera
   - weblink.router
 
-GarageSensors:  
-  name: Garage Sensors  
+GarageCard:  
+  name: Garage
+  control: hidden
   entities:
+    - switch.garage_light_switch
+    - input_select.garage_status_dropdown
+    - sensor.sn1_distance
     - sensor.sn1_temperature
     - sensor.sn1_humidity
     - sensor.sn1_ldr
     - light.sn1_led
-    - sensor.sn1_distance
-    - input_select.garage_status_dropdown
-

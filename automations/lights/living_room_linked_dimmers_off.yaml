@@ -15,3 +15,4 @@ action:
   - service: light.turn_off
     data: 
       entity_id: light.living_dimmer_2_level
+  - service: shell_command.fan_light_off    
