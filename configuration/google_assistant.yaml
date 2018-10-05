@@ -32,7 +32,7 @@ entity_config:
       - living room fan
       - ceiling fan
       - fan
-  light.lifx_ruby_room
+  light.lifx_ruby_room:
     name: Ruby Room Light
     aliases:
       - ruby room light
