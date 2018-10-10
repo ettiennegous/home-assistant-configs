@@ -5,7 +5,6 @@ tts/**
 dehydrated/**
 www/**
 secrets.yaml
-known_devices.yaml
 known_devices.old*
 **__pycache__**
 entity_registry.yaml

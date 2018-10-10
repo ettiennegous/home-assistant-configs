@@ -1,9 +1,9 @@
-alias: Rf Remote 3 D
+alias: Rf Remote Bauhn 3 Off
 hide_entity: True
 trigger:
   platform: mqtt
   topic: "home/OpenMQTTGateway/433toMQTT"
-  payload: "6402353"
+  payload: "349144514"
 action:
   - service: input_boolean.toggle
-    entity_id: input_boolean.rf_remote_3_d
+    entity_id: input_boolean.rf_remote_3_off

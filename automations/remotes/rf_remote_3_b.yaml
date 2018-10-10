@@ -1,13 +1,9 @@
 alias: Rf Remote 3 B
 hide_entity: True
 trigger:
-  platform: event
-  event_type: pilight_received
-  event_data:
-    protocol: ev1527
-    unitcode: 112956
-    uuid: 0000-b8-27-eb-60df5f   
-    state: 'closed-not-working'
+  platform: mqtt
+  topic: "home/OpenMQTTGateway/433toMQTT"
+  payload: "???????"
 action:
   - service: input_boolean.toggle
     entity_id: input_boolean.rf_remote_3_b

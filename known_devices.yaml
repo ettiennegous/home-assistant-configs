@@ -1,0 +1,36 @@
+kkramers_iphone:
+  hide_if_away: false
+  icon:
+  mac: D0:C5:F3:E3:85:F6
+  name: kkramers iphone
+  picture:
+  track: true
+  vendor:
+  gravatar: kellygous@gmail.com
+
+ettiennes_iphone:
+  hide_if_away: false
+  icon:
+  mac: BT_60:F4:45:B5:99:1C
+  name: Ettienne
+  picture:
+  track: true
+  vendor: Apple, Inc.
+  gravatar: ettiennegous@hotmail.com
+samsung_3d_tv:
+  hide_if_away: false
+  icon:
+  mac: BT_60:6B:BD:0F:5D:B1
+  name: Samsung 3D TV
+  picture:
+  track: true
+  vendor: unknown
+
+dtvbluetooth:
+  hide_if_away: false
+  icon:
+  mac: BT_E4:E0:C5:C9:E7:B5
+  name: DTVBluetooth
+  picture:
+  track: true
+  vendor: Samsung Electronics Co.,Ltd
