@@ -1,0 +1,15 @@
+alias: Wake XMAS Tree on movement
+hide_entity: True
+condition:
+  condition: and
+  conditions: 
+    - condition: state
+      entity_id: input_boolean.auto_lights
+      state: 'on'
+trigger: 
+  platform: state
+  entity_id: binary_sensor.living_room_motion_sensor
+  from: 'off'
+  to: 'on'
+action:
+  - service: script.xmas_tree_motion_on

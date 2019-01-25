@@ -1,6 +1,6 @@
 - platform: mqtt
   name: "Woodstock Switch"
-  state_topic: "stat/sonoff-woodstock/POWER"
+  state_topic: "stat/sonoff-woodstock/POWER1"
   command_topic: "cmnd/sonoff-woodstock/POWER"
   availability_topic: "tele/sonoff-woodstock/LWT"
   payload_on: "ON"
@@ -11,7 +11,7 @@
   retain: true
 - platform: mqtt
   name: "Lucy Switch"
-  state_topic: "stat/sonoff-lucy/POWER"
+  state_topic: "stat/sonoff-lucy/POWER1"
   command_topic: "cmnd/sonoff-lucy/POWER"
   availability_topic: "tele/sonoff-lucy/LWT"
   payload_on: "ON"
@@ -22,7 +22,7 @@
   retain: true
 - platform: mqtt
   name: "Snoopy Switch"
-  state_topic: "stat/sonoff-snoopy/POWER"
+  state_topic: "stat/sonoff-snoopy/POWER1"
   command_topic: "cmnd/sonoff-snoopy/POWER"
   availability_topic: "tele/sonoff-snoopy/LWT"
   payload_on: "ON"
@@ -33,7 +33,7 @@
   retain: true
 - platform: mqtt
   name: "Belle Switch"
-  state_topic: "stat/sonoff-belle/POWER"
+  state_topic: "stat/sonoff-belle/POWER1"
   command_topic: "cmnd/sonoff-belle/POWER"
   availability_topic: "tele/sonoff-belle/LWT"
   payload_on: "ON"

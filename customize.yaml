@@ -22,6 +22,14 @@ switch.woodstock_switch:
   friendly_name: Discreet Light
   icon: mdi:priority-low
 
+switch.lucy_switch:
+  homebridge_switch_type: outlet
+  homebridge_visible: true
+  homebridge_name: Xmas Tree
+  friendly_name: Xmas Tree
+  icon: mdi:priority-low
+
+
 fan.ceiling_fan:
   homebridge_visible: true
   homebridge_name: Ceiling Fan

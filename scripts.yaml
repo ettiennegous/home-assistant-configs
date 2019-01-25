@@ -83,6 +83,19 @@ foyer_motion_standing_lamp_dimmer2_on:
     - service: light.turn_off
       entity_id: light.stand_lamp_dimmer_2_level
 
+xmas_tree_motion_on:
+  alias: Xmas Tree Motion On
+  sequence:
+    - condition: state
+      entity_id: switch.lucy_switch
+      state: 'off'
+    - service: switch.turn_on
+      entity_id: switch.lucy_switch
+    - delay:
+        minutes: 5
+    - service: switch.turn_off
+      entity_id: switch.lucy_switch
+
 foyer_motion_fan_light_on:
   alias: Foyer Motion Fan Light On
   sequence:

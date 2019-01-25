@@ -4,6 +4,7 @@ default_view:
   entities:
     - group.SceneTriggers
     - group.Family
+    - group.InDoorMotionSensors
     - group.Speakers
     - group.Study
     - group.Miscelanious
@@ -36,6 +37,7 @@ LivingRoomLights:
     - light.living_dimmer_1_level
     - light.living_dimmer_2_level
     - input_boolean.fan_light
+    - switch.lucy_switch
 
 LivingRoomAV:
   name: Living Room AV
@@ -162,7 +164,6 @@ Speakers:
 Family: 
   entities:
     - input_select.home_status_dropdown
-    - group.InDoorMotionSensors
     - device_tracker.ettiennes_iphone
     - device_tracker.kkramers_iphone    
     - sensor.time_to_home
@@ -338,3 +339,31 @@ GarageCard:
     - sensor.sn1_humidity
     - sensor.sn1_ldr
     - light.sn1_led
+
+SummaryGarageCardReadonly:  
+  name: Garage
+  control: hidden
+  entities:
+    - input_select.garage_status_dropdown
+    - sensor.sn1_temperature
+    - sensor.sn1_humidity
+    - sensor.sn1_ldr
+
+SummaryCameras:
+  name: Cameras
+  control: hidden
+  entities:
+    - camera.ruby_cam
+    - camera.front_door_cam
+    - sensor.ruby_room_temp
+
+Summary: 
+  view: yes
+  icon: mdi:face
+  entities:
+    - group.SummaryCameras
+    - group.LivingRoomSensors
+    - group.FrontDoorSensors
+    - group.FoyerSensors
+    - group.SummaryGarageCardReadonly
+    - group.Family
