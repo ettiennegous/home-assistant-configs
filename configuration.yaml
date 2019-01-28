@@ -118,15 +118,6 @@ light:
     rgb: true  
     optimistic: false  
     qos: 0  
-  - platform: mqtt  
-    name: "Ruby Night Light"  
-    state_topic: "bruh/rubynightlight"  
-    command_topic: "bruh/rubynightlight/set"  
-    brightness: true  
-    flash: true  
-    rgb: true  
-    optimistic: false  
-    qos: 0  
   - platform: lifx
 
 shell_command: !include configuration/shell_command.yaml

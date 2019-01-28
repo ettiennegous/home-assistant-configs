@@ -1,5 +1,6 @@
 alias: Wake XMAS Tree on movement
 hide_entity: True
+initial_state: False #Turn this back on in Dec
 condition:
   condition: and
   conditions: 

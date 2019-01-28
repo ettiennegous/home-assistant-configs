@@ -6,14 +6,14 @@ input_boolean.fan_light:
 switch.snoopy_switch:
   homebridge_switch_type: outlet
   homebridge_visible: true
-  homebridge_name: Ruby Fan
-  friendly_name: Ruby's Fan
+  homebridge_name: NOT IN USE 1
+  friendly_name: NOT IN USE 1
 
 switch.belle_switch:
   homebridge_switch_type: outlet
   homebridge_visible: true
-  homebridge_name: Bedroom Fan
-  friendly_name: Bedroom Fan
+  homebridge_name: NOT IN USE 2
+  friendly_name: NOT IN USE 2
 
 switch.woodstock_switch:
   homebridge_switch_type: outlet
@@ -25,8 +25,8 @@ switch.woodstock_switch:
 switch.lucy_switch:
   homebridge_switch_type: outlet
   homebridge_visible: true
-  homebridge_name: Xmas Tree
-  friendly_name: Xmas Tree
+  homebridge_name: Xmas Tree #Turn this back on in Dec
+  friendly_name: Xmas Tree #Turn this back on in Dec
   icon: mdi:priority-low
 
 
