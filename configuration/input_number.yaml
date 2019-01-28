@@ -3,13 +3,13 @@ spotify_volume:
   icon: mdi:volume-high
   min: 0
   max: 1
-  step: 0.05
+  step: 0.1
 announcements_volume:
   name: Announcements Volume
   icon: mdi:bullhorn
   min: 0
   max: 1
-  step: 0.05
+  step: 0.1
 alex_standing_light_brightness:
   name: Alex Light Brightness
   icon: mdi:theme-light-dark

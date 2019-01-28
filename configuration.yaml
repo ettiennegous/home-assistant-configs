@@ -54,7 +54,7 @@ tts:
 cloud:
 ios:
 notify:
-  - name: All_iOS_Devices
+  - name: all_ios_devices
     platform: group
     services:
       - service: ios_ettiennes_iphone
@@ -109,7 +109,7 @@ binary_sensor:
     payload_off: "0"
       
 light:  
-  - platform: mqtt_json  
+  - platform: mqtt  
     name: "SN1 LED"  
     state_topic: "bruh/sensornode1"  
     command_topic: "bruh/sensornode1/set"  
@@ -118,7 +118,7 @@ light:
     rgb: true  
     optimistic: false  
     qos: 0  
-  - platform: mqtt_json  
+  - platform: mqtt  
     name: "Ruby Night Light"  
     state_topic: "bruh/rubynightlight"  
     command_topic: "bruh/rubynightlight/set"  
@@ -140,7 +140,6 @@ recorder:
       - sensor
       - binary_sensor
       - switch
-      - media_player
       - input_boolean
       - input_number
       - input_select
@@ -149,16 +148,18 @@ recorder:
       - fan
       - light
       - alarm_control_panel
+      - 
   exclude:
     entities:
-      - sensor.ram_used
-      - sensor.average_load_1m
-      - sensor.average_load_5m
-      - sensor.average_load_15m
-      - sensor.disk_used_home
+      - sensor.memory_use_percent
+      - sensor.load_1m
+      - sensor.load_5m
+      - sensor.load_15m
+      - sensor.disk_use_percent_home
       - sensor.ssl_certificate_expiry
       - sensor.iphone_battery_level
       - sensor.kellys_ipad_battery_level
+      - sensor.kkramers_iphone_battery_level
       - sensor.sn1_temperature
       - sensor.sn1_humidity
       - sensor.sn1_ldr

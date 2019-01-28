@@ -1,4 +1,4 @@
-- platform: owntracks_http
+- platform: owntracks
 #- platform: bluetooth_tracker
 #  interval_seconds: 20
 #  track_new_devices: yes

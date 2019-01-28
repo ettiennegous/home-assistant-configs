@@ -24,7 +24,7 @@ action:
       entity_id: media_player.everywhere
       media_content_id: !secret doorbell_mp3_url
       media_content_type: audio/mp3
-  - service: notify.All_iOS_Devices
+  - service: notify.all_ios_devices
     data:
       message: 'Ding Dong Front Door {{now().strftime("%Y%m%d-%H%M%S")}}'
       data:

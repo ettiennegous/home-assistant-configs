@@ -1,0 +1,15 @@
+alias: Everywhere Volume Up
+hide_entity: True
+trigger:
+  platform: state
+  entity_id: input_boolean.rf_remote_2_d
+action:
+    - service: input_number.set_value
+      data_template:
+        entity_id: input_number.announcements_volume
+        value: >
+          {% if (states('input_number.announcements_volume')| float) > 0.0 %}
+            {{ (states('input_number.announcements_volume')| float) - 0.1 }}
+          {% else %}
+            0
+          {% endif %}
